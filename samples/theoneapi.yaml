@@ -416,7 +416,7 @@ components:
     Books:
       type: object
       properties:
-        doc:
+        docs:
           type: array
           items:
             $ref: "#/components/schemas/Book"
@@ -434,7 +434,7 @@ components:
     Movies:
       type: object
       properties:
-        doc:
+        docs:
           type: array
           items:
             $ref: "#/components/schemas/Movie"
@@ -452,7 +452,7 @@ components:
     Chapters:
       type: object
       properties:
-        doc:
+        docs:
           type: array
           items:
             $ref: "#/components/schemas/Chapter"
@@ -470,7 +470,7 @@ components:
     Characters:
       type: object
       properties:
-        doc:
+        docs:
           type: array
           items:
             $ref: "#/components/schemas/Character"
@@ -488,7 +488,7 @@ components:
     Quotes:
       type: object
       properties:
-        doc:
+        docs:
           type: array
           items:
             $ref: "#/components/schemas/Quote"
