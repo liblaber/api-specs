@@ -63,7 +63,7 @@ components:
     PagedBooks:
       type: object
       properties:
-        doc:
+        docs:
           type: array
           items:
             $ref: '#/components/schemas/Book'
