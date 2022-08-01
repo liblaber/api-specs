@@ -1,0 +1,821 @@
+{
+  "uuid": "16da77ed-3f40-464c-a123-fe051d5443b7",
+  "lastMigration": 19,
+  "name": "Healthcare",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3000,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "c6a5250d-6dfc-436c-82cc-5b35d06e4ba6",
+      "documentation": "Returns pages content.",
+      "method": "get",
+      "endpoint": "api/articles:mediaTypeExtension",
+      "responses": [
+        {
+          "uuid": "d7111e5a-fb49-47fe-bc40-a2f8f432e75d",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "OK",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "*/*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "73594cdd-4c1b-4cec-ad33-d85355a3708e",
+          "body": "",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Resource not found.",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "bc696a2a-c920-4ede-8315-4cda26a53359",
+      "documentation": "Returns pages content.",
+      "method": "get",
+      "endpoint": "api/blog:mediaTypeExtension",
+      "responses": [
+        {
+          "uuid": "a5b0355b-e4bc-4d89-b7de-b00d83307958",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "OK",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "*/*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "85e83969-2e26-45db-83c7-431aa14b05a3",
+          "body": "",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Resource not found.",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "0db98650-59ab-4f03-b2c9-f406f99dd006",
+      "documentation": "Returns pages content.",
+      "method": "get",
+      "endpoint": "api/glossary:mediaTypeExtension",
+      "responses": [
+        {
+          "uuid": "e740b6f9-b262-4bd7-89df-6a7951df7256",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "OK",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "*/*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "0d161d38-9ecb-489b-820b-f910e4ca13cf",
+          "body": "",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Resource not found.",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "5501b6b4-aa96-41bb-8689-c4b1956e9843",
+      "documentation": "Returns pages content.",
+      "method": "get",
+      "endpoint": "api/questions:mediaTypeExtension",
+      "responses": [
+        {
+          "uuid": "e8d88697-bf1e-487d-9465-94a81ea56d6d",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "OK",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "*/*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "81c1958c-b6c7-49a0-8122-012d6ab98a1c",
+          "body": "",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Resource not found.",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "f278bcaa-d692-463e-9654-4acf7cf1e624",
+      "documentation": "Returns pages content.",
+      "method": "get",
+      "endpoint": "api/states:mediaTypeExtension",
+      "responses": [
+        {
+          "uuid": "0061b8aa-bb71-4b9f-b80b-b0f5a189d00e",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "OK",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "*/*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "0df85401-4383-4110-8c4d-a2367b08438e",
+          "body": "",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Resource not found.",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "c597845f-c1af-487c-b702-d8b3576d235d",
+      "documentation": "Returns pages content.",
+      "method": "get",
+      "endpoint": "api/topics:mediaTypeExtension",
+      "responses": [
+        {
+          "uuid": "c84fe7e6-93f6-47c8-801f-f539cc13b4a0",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "OK",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "*/*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "79bf5bc9-bc76-4628-86ba-5ee82d737e54",
+          "body": "",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Resource not found.",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "4dcc7d97-a1e4-47a6-97a5-065b465a466f",
+      "documentation": "Returns pages content.",
+      "method": "get",
+      "endpoint": "blog/:pageName:mediaTypeExtension",
+      "responses": [
+        {
+          "uuid": "b06dea78-f95e-4667-aabb-edd210268260",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "OK",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/html"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "86538f53-4f92-40bf-896d-4c79af54e3e7",
+          "body": "",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Resource not found.",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "d87714ab-1b28-4df9-8fee-aba4ccd0aca7",
+      "documentation": "Returns pages content.",
+      "method": "get",
+      "endpoint": "es/blog/:pageName:mediaTypeExtension",
+      "responses": [
+        {
+          "uuid": "a4749b6b-8bf6-4446-87b6-152c603bc5b3",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "OK",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/html"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "29a75ad0-0a3c-424c-af5e-1ccf9591f6bf",
+          "body": "",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Resource not found.",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "fd070fec-c8d8-4e15-8d04-cb3914a18510",
+      "documentation": "Returns pages content.",
+      "method": "get",
+      "endpoint": "es/glossary/:pageName:mediaTypeExtension",
+      "responses": [
+        {
+          "uuid": "f23aa8ee-2aa4-406c-9d8e-d4d8f4cb2249",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "OK",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/html"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "2e759e38-d194-48f7-bbfe-e12994f2cfd6",
+          "body": "",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Resource not found.",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "6cdb9d38-e4a5-407a-854c-1432edec5568",
+      "documentation": "Returns pages content.",
+      "method": "get",
+      "endpoint": "es/question/:pageName:mediaTypeExtension",
+      "responses": [
+        {
+          "uuid": "91b728a7-fa62-4fb5-8843-5187197d859e",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "OK",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "*/*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "3b826bfe-80de-4d9d-b13a-5874ba43871c",
+          "body": "",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Resource not found.",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "c2be40b8-4021-4647-a083-8fcc3c39a210",
+      "documentation": "Returns pages content.",
+      "method": "get",
+      "endpoint": "es/:pageName:mediaTypeExtension",
+      "responses": [
+        {
+          "uuid": "79595804-1db1-4c74-8766-f8ba79ab3934",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "OK",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/html"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "90d56993-92cc-4f4b-a391-58388ad6b3e5",
+          "body": "",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Resource not found.",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "b619d1c2-0702-4d10-8eb1-24b96f86ec6b",
+      "documentation": "Returns pages content.",
+      "method": "get",
+      "endpoint": "es/:stateName:mediaTypeExtension",
+      "responses": [
+        {
+          "uuid": "061e66ba-e087-4e97-ba95-181cb9a588b4",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "OK",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "*/*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "bcee308a-cf25-43b5-9ce6-0fee75c8b509",
+          "body": "",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Resource not found.",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "cfec38fe-aee5-4bef-974c-a8ce2b95bf8f",
+      "documentation": "Returns pages content.",
+      "method": "get",
+      "endpoint": "glossary/:pageName:mediaTypeExtension",
+      "responses": [
+        {
+          "uuid": "bd315e86-1320-4c88-b238-64a5d60e814d",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "OK",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/html"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "62759c3d-8262-4b2e-ad4e-4e98ac820660",
+          "body": "",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Resource not found.",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "57c3f46b-cec6-4172-8dd5-a4817e908376",
+      "documentation": "Returns pages content.",
+      "method": "get",
+      "endpoint": "question/:pageName:mediaTypeExtension",
+      "responses": [
+        {
+          "uuid": "5888ee4a-2e39-4524-bef7-b726cd62850d",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "OK",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "*/*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "f2beb3c8-e9bd-412e-80d3-c64899c70527",
+          "body": "",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Resource not found.",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "5e57e0e3-e93d-4c92-afe4-c36ed15c7a1e",
+      "documentation": "Returns pages content.",
+      "method": "get",
+      "endpoint": ":pageName:mediaTypeExtension",
+      "responses": [
+        {
+          "uuid": "1f35297a-21c1-4264-bb5e-4fe09982afca",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "OK",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/html"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "b55db0a8-d486-430e-bca1-754bf48a6d27",
+          "body": "",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Resource not found.",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "bc866905-7db5-4f1d-9cfd-ca374b61603a",
+      "documentation": "Returns pages content.",
+      "method": "get",
+      "endpoint": ":stateName:mediaTypeExtension",
+      "responses": [
+        {
+          "uuid": "f61cad4b-7824-4eef-937f-b3370ab39133",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "OK",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "*/*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "bf04c88c-ed0b-4a1d-8ccf-6f826a2505ed",
+          "body": "",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Resource not found.",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ]
+}
