@@ -1,0 +1,3726 @@
+{
+  "uuid": "6a6b969c-553c-4adc-8759-a3a3f17ac104",
+  "lastMigration": 19,
+  "name": "SoundCloud Public API Specification",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3000,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "54a9d988-4901-4f8d-863e-fca6df8ddf01",
+      "documentation": "The OAuth2 authorization endpoint. Your app redirects a user to this endpoint, allowing them to delegate access to their account.",
+      "method": "get",
+      "endpoint": "connect",
+      "responses": [
+        {
+          "uuid": "7d7a6c52-5085-4f61-b655-15b0eafe37db",
+          "body": "\"\"",
+          "latency": 0,
+          "statusCode": 302,
+          "label": "Found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "fc7b93aa-b780-4299-a652-8982e4ef12d7",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "90d947cd-9a7e-4474-b3b4-9be0a66bd18e",
+      "documentation": "Unlikes a playlist.",
+      "method": "delete",
+      "endpoint": "likes/playlists/:playlist_id",
+      "responses": [
+        {
+          "uuid": "0c9f5998-0430-4b3b-9776-6608b258c1df",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "7965b599-91a2-40a3-8c60-778dd665e7be",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 400,
+          "label": "Bad Request",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "72b32816-e428-45c8-838b-c44092828e6b",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Not Found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "c251fc6c-a30c-4f1a-92cc-ceada35b308b",
+      "documentation": "Likes a playlist.",
+      "method": "post",
+      "endpoint": "likes/playlists/:playlist_id",
+      "responses": [
+        {
+          "uuid": "1d16daa2-e74b-4ac6-b3db-e0128fb4f468",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "787e678c-8141-4f1b-9e5e-0454763bd0ad",
+          "body": "",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "Created",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "9e0fda3d-b710-48ef-b4cc-611c4ce6b722",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 400,
+          "label": "Bad Request",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "27bc15d8-2f44-414f-ac48-c2be7ba7a6c9",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "c5799675-b311-4a3d-b61b-0a09d4f7fc57",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Not Found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "7e8e5a25-e369-4f53-a230-6c3f7bf37d47",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 429,
+          "label": "Too Many Requests",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "f703d289-adb4-495a-ae51-52d99b5e6b06",
+      "documentation": "Unlikes a track.",
+      "method": "delete",
+      "endpoint": "likes/tracks/:track_id",
+      "responses": [
+        {
+          "uuid": "0a303265-f814-4d0a-8d9f-0c2a2dc1bf46",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "ad3dfa13-e75c-4454-8152-39b8cae5c8ee",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 400,
+          "label": "Bad Request",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "bb62079d-99be-458a-8190-a0a497e06c70",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Not Found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "d09a2cff-4f96-4765-8772-1c6cc1dce3b6",
+      "documentation": "Likes a track.",
+      "method": "post",
+      "endpoint": "likes/tracks/:track_id",
+      "responses": [
+        {
+          "uuid": "6ba6b3d6-f1a2-4685-b053-9e3ae6102aca",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "4e3faa4e-99e4-4fb3-a8fd-f8e8b941b768",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 400,
+          "label": "Bad Request",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "a5249e3b-5c2a-43bd-8169-70fa39612a69",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "12dc55ed-b7ef-4835-a568-2cf21bf3f922",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Not Found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "cb2cd4e5-ff70-4b40-829d-3cc6d4d321fa",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 429,
+          "label": "Too Many Requests",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "4b36b935-838c-4be3-98c8-a9125047d0a9",
+      "documentation": "Returns the authenticated user’s information.",
+      "method": "get",
+      "endpoint": "me",
+      "responses": [
+        {
+          "uuid": "f241bbff-1ea2-4ddb-a7a1-9b35f69ae62c",
+          "body": "{\n  \"avatar_url\": \"\",\n  \"city\": \"\",\n  \"country\": \"\",\n  \"description\": \"\",\n  \"discogs_name\": \"\",\n  \"first_name\": \"\",\n  \"followers_count\": {{faker 'random.number'}},\n  \"followings_count\": {{faker 'random.number'}},\n  \"full_name\": \"\",\n  \"id\": {{faker 'random.number'}},\n  \"kind\": \"\",\n  \"last_modified\": \"\",\n  \"last_name\": \"\",\n  \"locale\": \"\",\n  \"myspace_name\": \"\",\n  \"permalink\": \"\",\n  \"permalink_url\": \"\",\n  \"plan\": \"\",\n  \"playlist_count\": {{faker 'random.number'}},\n  \"primary_email_confirmed\": {{faker 'random.boolean'}},\n  \"private_playlists_count\": {{faker 'random.number'}},\n  \"private_tracks_count\": {{faker 'random.number'}},\n  \"public_favorites_count\": {{faker 'random.number'}},\n  \"quota\": {\n    \"unlimited_upload_quota\": {{faker 'random.boolean'}},\n    \"upload_seconds_used\": {{faker 'random.number'}}\n  },\n  \"reposts_count\": {{faker 'random.number'}},\n  \"subscriptions\": \"\",\n  \"track_count\": {{faker 'random.number'}},\n  \"uri\": \"\",\n  \"username\": \"\",\n  \"website\": \"\",\n  \"website_title\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "8b0def91-fde8-4066-8b2d-3a4287270a1e",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "8ad7e537-7dec-4b1c-a6e2-2b45e34ba959",
+      "documentation": "Returns the authenticated user's activities.",
+      "method": "get",
+      "endpoint": "me/activities",
+      "responses": [
+        {
+          "uuid": "4829d327-e7ec-484f-bf77-76fe44508970",
+          "body": "{\n  \"collection\": [\n    {\n      \"created_at\": \"\",\n      \"origin\": {\n        \"access\": \"{{oneOf (array 'playable' 'preview' 'blocked' '')}}\",\n        \"artwork_url\": \"\",\n        \"available_country_codes\": \"\",\n        \"bpm\": {{faker 'random.number'}},\n        \"comment_count\": {{faker 'random.number'}},\n        \"commentable\": {{faker 'random.boolean'}},\n        \"created_at\": \"\",\n        \"description\": \"\",\n        \"download_count\": {{faker 'random.number'}},\n        \"download_url\": \"\",\n        \"downloadable\": \"\",\n        \"duration\": {{faker 'random.number'}},\n        \"embeddable_by\": \"\",\n        \"favoritings_count\": {{faker 'random.number'}},\n        \"genre\": \"\",\n        \"id\": {{faker 'random.number'}},\n        \"isrc\": \"\",\n        \"key_signature\": \"\",\n        \"kind\": \"\",\n        \"label_name\": \"\",\n        \"license\": \"\",\n        \"permalink_url\": \"\",\n        \"playback_count\": {{faker 'random.number'}},\n        \"purchase_title\": \"\",\n        \"purchase_url\": \"\",\n        \"release\": \"\",\n        \"release_day\": {{faker 'random.number'}},\n        \"release_month\": {{faker 'random.number'}},\n        \"release_year\": {{faker 'random.number'}},\n        \"reposts_count\": {{faker 'random.number'}},\n        \"secret_uri\": \"\",\n        \"sharing\": \"\",\n        \"stream_url\": \"\",\n        \"streamable\": {{faker 'random.boolean'}},\n        \"tag_list\": \"\",\n        \"title\": \"\",\n        \"uri\": \"\",\n        \"user\": {\n          \"avatar_url\": \"\",\n          \"created_at\": \"{{faker 'date.recent' 365}}\",\n          \"id\": {{faker 'random.number'}},\n          \"kind\": \"\",\n          \"last_modified\": \"{{faker 'date.recent' 365}}\",\n          \"permalink\": \"\",\n          \"permalink_url\": \"\",\n          \"uri\": \"\",\n          \"username\": \"\"\n        },\n        \"user_favorite\": {{faker 'random.boolean'}},\n        \"user_playback_count\": {{faker 'random.number'}},\n        \"waveform_url\": \"\"\n      },\n      \"type\": \"\"\n    }\n  ],\n  \"future_href\": \"\",\n  \"next_href\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "b0aa52a2-5a80-4228-bf7b-a4c1941a5d32",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "adee1592-387d-4d26-b648-375bce0b660e",
+      "documentation": "Recent the authenticated user's activities.",
+      "method": "get",
+      "endpoint": "me/activities/all/own",
+      "responses": [
+        {
+          "uuid": "098ba3db-71d7-483a-9dbb-4c1ed2020d7d",
+          "body": "{\n  \"collection\": [\n    {\n      \"created_at\": \"\",\n      \"origin\": {\n        \"access\": \"{{oneOf (array 'playable' 'preview' 'blocked' '')}}\",\n        \"artwork_url\": \"\",\n        \"available_country_codes\": \"\",\n        \"bpm\": {{faker 'random.number'}},\n        \"comment_count\": {{faker 'random.number'}},\n        \"commentable\": {{faker 'random.boolean'}},\n        \"created_at\": \"\",\n        \"description\": \"\",\n        \"download_count\": {{faker 'random.number'}},\n        \"download_url\": \"\",\n        \"downloadable\": \"\",\n        \"duration\": {{faker 'random.number'}},\n        \"embeddable_by\": \"\",\n        \"favoritings_count\": {{faker 'random.number'}},\n        \"genre\": \"\",\n        \"id\": {{faker 'random.number'}},\n        \"isrc\": \"\",\n        \"key_signature\": \"\",\n        \"kind\": \"\",\n        \"label_name\": \"\",\n        \"license\": \"\",\n        \"permalink_url\": \"\",\n        \"playback_count\": {{faker 'random.number'}},\n        \"purchase_title\": \"\",\n        \"purchase_url\": \"\",\n        \"release\": \"\",\n        \"release_day\": {{faker 'random.number'}},\n        \"release_month\": {{faker 'random.number'}},\n        \"release_year\": {{faker 'random.number'}},\n        \"reposts_count\": {{faker 'random.number'}},\n        \"secret_uri\": \"\",\n        \"sharing\": \"\",\n        \"stream_url\": \"\",\n        \"streamable\": {{faker 'random.boolean'}},\n        \"tag_list\": \"\",\n        \"title\": \"\",\n        \"uri\": \"\",\n        \"user\": {\n          \"avatar_url\": \"\",\n          \"created_at\": \"{{faker 'date.recent' 365}}\",\n          \"id\": {{faker 'random.number'}},\n          \"kind\": \"\",\n          \"last_modified\": \"{{faker 'date.recent' 365}}\",\n          \"permalink\": \"\",\n          \"permalink_url\": \"\",\n          \"uri\": \"\",\n          \"username\": \"\"\n        },\n        \"user_favorite\": {{faker 'random.boolean'}},\n        \"user_playback_count\": {{faker 'random.number'}},\n        \"waveform_url\": \"\"\n      },\n      \"type\": \"\"\n    }\n  ],\n  \"future_href\": \"\",\n  \"next_href\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "e1fc61d1-b1fb-45e6-9fe9-96612ded723d",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "a7c34faa-5c89-4ab3-95aa-cedff3c83fdb",
+      "documentation": "Returns the authenticated user's recent track related activities.",
+      "method": "get",
+      "endpoint": "me/activities/tracks",
+      "responses": [
+        {
+          "uuid": "2c1a5bac-744f-428e-913c-e59bd8b2aea3",
+          "body": "{\n  \"collection\": [\n    {\n      \"created_at\": \"\",\n      \"origin\": {\n        \"access\": \"{{oneOf (array 'playable' 'preview' 'blocked' '')}}\",\n        \"artwork_url\": \"\",\n        \"available_country_codes\": \"\",\n        \"bpm\": {{faker 'random.number'}},\n        \"comment_count\": {{faker 'random.number'}},\n        \"commentable\": {{faker 'random.boolean'}},\n        \"created_at\": \"\",\n        \"description\": \"\",\n        \"download_count\": {{faker 'random.number'}},\n        \"download_url\": \"\",\n        \"downloadable\": \"\",\n        \"duration\": {{faker 'random.number'}},\n        \"embeddable_by\": \"\",\n        \"favoritings_count\": {{faker 'random.number'}},\n        \"genre\": \"\",\n        \"id\": {{faker 'random.number'}},\n        \"isrc\": \"\",\n        \"key_signature\": \"\",\n        \"kind\": \"\",\n        \"label_name\": \"\",\n        \"license\": \"\",\n        \"permalink_url\": \"\",\n        \"playback_count\": {{faker 'random.number'}},\n        \"purchase_title\": \"\",\n        \"purchase_url\": \"\",\n        \"release\": \"\",\n        \"release_day\": {{faker 'random.number'}},\n        \"release_month\": {{faker 'random.number'}},\n        \"release_year\": {{faker 'random.number'}},\n        \"reposts_count\": {{faker 'random.number'}},\n        \"secret_uri\": \"\",\n        \"sharing\": \"\",\n        \"stream_url\": \"\",\n        \"streamable\": {{faker 'random.boolean'}},\n        \"tag_list\": \"\",\n        \"title\": \"\",\n        \"uri\": \"\",\n        \"user\": {\n          \"avatar_url\": \"\",\n          \"created_at\": \"{{faker 'date.recent' 365}}\",\n          \"id\": {{faker 'random.number'}},\n          \"kind\": \"\",\n          \"last_modified\": \"{{faker 'date.recent' 365}}\",\n          \"permalink\": \"\",\n          \"permalink_url\": \"\",\n          \"uri\": \"\",\n          \"username\": \"\"\n        },\n        \"user_favorite\": {{faker 'random.boolean'}},\n        \"user_playback_count\": {{faker 'random.number'}},\n        \"waveform_url\": \"\"\n      },\n      \"type\": \"\"\n    }\n  ],\n  \"future_href\": \"\",\n  \"next_href\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "9fe0da8e-e167-4756-b925-3549c9ccc3c3",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "a3e80061-f36c-4d1b-be01-ebff929728aa",
+      "documentation": "Returns a list of the authenticated user's connected social accounts.",
+      "method": "get",
+      "endpoint": "me/connections",
+      "responses": [
+        {
+          "uuid": "43e5d0a3-9b15-4031-8f91-21da41ae22ee",
+          "body": "[\n  {\n    \"created_at\": \"\",\n    \"display_name\": \"\",\n    \"id\": {{faker 'random.number'}},\n    \"kind\": \"\",\n    \"post_favorite\": {{faker 'random.boolean'}},\n    \"post_publish\": {{faker 'random.boolean'}},\n    \"service\": \"\",\n    \"type\": \"\",\n    \"uri\": \"\"\n  }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "7bd29c11-9bd9-49bd-8234-4dd1f6d296c4",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "ee5834d2-ad60-4fd2-ad46-89560fd0b6a1",
+      "documentation": "Returns the authenticated user's connected social account.",
+      "method": "get",
+      "endpoint": "me/connections/:connection_id",
+      "responses": [
+        {
+          "uuid": "1e794e9f-c842-4d99-938d-9cd507eae742",
+          "body": "{\n  \"created_at\": \"\",\n  \"display_name\": \"\",\n  \"id\": {{faker 'random.number'}},\n  \"kind\": \"\",\n  \"post_favorite\": {{faker 'random.boolean'}},\n  \"post_publish\": {{faker 'random.boolean'}},\n  \"service\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "7510d2ef-90c1-4128-bb4c-8a0d39d405ed",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "b8f88de9-9571-4e46-a3db-cfe294d081ee",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Not Found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "711ce5b3-5270-4e75-acc4-70544fb0ea69",
+      "documentation": "Returns user’s favorites ids. (use /me/likes/tracks instead to fetch the authenticated user's likes)",
+      "method": "get",
+      "endpoint": "me/favorites/ids",
+      "responses": [
+        {
+          "uuid": "a6864636-a6dc-4616-80c8-862461f2208c",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "aff8f431-b5c3-46ba-9582-55a4d6235d12",
+          "body": "",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "The user could not be found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "e7633dbe-90c6-4091-904d-8a9b732be559",
+      "documentation": "Returns a list of users who are following the authenticated user.",
+      "method": "get",
+      "endpoint": "me/followers",
+      "responses": [
+        {
+          "uuid": "ec57023e-158e-4ef2-b252-a1ed2163117b",
+          "body": "{\n  \"collection\": [\n    {\n      \"avatar_url\": \"\",\n      \"city\": \"\",\n      \"country\": \"\",\n      \"created_at\": \"{{faker 'date.recent' 365}}\",\n      \"description\": \"\",\n      \"discogs_name\": \"\",\n      \"first_name\": \"\",\n      \"followers_count\": {{faker 'random.number'}},\n      \"followings_count\": {{faker 'random.number'}},\n      \"full_name\": \"\",\n      \"id\": {{faker 'random.number'}},\n      \"kind\": \"\",\n      \"last_modified\": \"{{faker 'date.recent' 365}}\",\n      \"last_name\": \"\",\n      \"myspace_name\": \"\",\n      \"permalink\": \"\",\n      \"permalink_url\": \"\",\n      \"plan\": \"\",\n      \"playlist_count\": {{faker 'random.number'}},\n      \"public_favorites_count\": {{faker 'random.number'}},\n      \"reposts_count\": {{faker 'random.number'}},\n      \"subscriptions\": \"\",\n      \"track_count\": {{faker 'random.number'}},\n      \"uri\": \"\",\n      \"username\": \"\",\n      \"website\": \"\",\n      \"website_title\": \"\"\n    }\n  ],\n  \"next_href\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "e1be49bd-4685-485f-bead-af6b56a91f63",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "64eca830-35f5-43ca-9338-9fdfbd96deeb",
+      "documentation": "Returns a user who is following the authenticated user. (use /users/{user_id} instead, to fetch the user details)",
+      "method": "get",
+      "endpoint": "me/followers/:follower_id",
+      "responses": [
+        {
+          "uuid": "51b125fc-76a7-4577-b740-397a992432b9",
+          "body": "{\n  \"avatar_url\": \"\",\n  \"city\": \"\",\n  \"country\": \"\",\n  \"created_at\": \"{{faker 'date.recent' 365}}\",\n  \"description\": \"\",\n  \"discogs_name\": \"\",\n  \"first_name\": \"\",\n  \"followers_count\": {{faker 'random.number'}},\n  \"followings_count\": {{faker 'random.number'}},\n  \"full_name\": \"\",\n  \"id\": {{faker 'random.number'}},\n  \"kind\": \"\",\n  \"last_modified\": \"{{faker 'date.recent' 365}}\",\n  \"last_name\": \"\",\n  \"myspace_name\": \"\",\n  \"permalink\": \"\",\n  \"permalink_url\": \"\",\n  \"plan\": \"\",\n  \"playlist_count\": {{faker 'random.number'}},\n  \"public_favorites_count\": {{faker 'random.number'}},\n  \"reposts_count\": {{faker 'random.number'}},\n  \"subscriptions\": \"\",\n  \"track_count\": {{faker 'random.number'}},\n  \"uri\": \"\",\n  \"username\": \"\",\n  \"website\": \"\",\n  \"website_title\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "d5bbc2da-dd01-4f72-95cc-79c3566c28bb",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "3f46f5c0-d0d1-46d1-97e7-0308d9104ef1",
+      "documentation": "Returns a list of users who are followed by the authenticated user.",
+      "method": "get",
+      "endpoint": "me/followings",
+      "responses": [
+        {
+          "uuid": "9803a5e1-5543-42c8-821c-0e5086cf9cad",
+          "body": "{\n  \"collection\": [\n    {\n      \"avatar_url\": \"\",\n      \"city\": \"\",\n      \"country\": \"\",\n      \"created_at\": \"{{faker 'date.recent' 365}}\",\n      \"description\": \"\",\n      \"discogs_name\": \"\",\n      \"first_name\": \"\",\n      \"followers_count\": {{faker 'random.number'}},\n      \"followings_count\": {{faker 'random.number'}},\n      \"full_name\": \"\",\n      \"id\": {{faker 'random.number'}},\n      \"kind\": \"\",\n      \"last_modified\": \"{{faker 'date.recent' 365}}\",\n      \"last_name\": \"\",\n      \"myspace_name\": \"\",\n      \"permalink\": \"\",\n      \"permalink_url\": \"\",\n      \"plan\": \"\",\n      \"playlist_count\": {{faker 'random.number'}},\n      \"public_favorites_count\": {{faker 'random.number'}},\n      \"reposts_count\": {{faker 'random.number'}},\n      \"subscriptions\": \"\",\n      \"track_count\": {{faker 'random.number'}},\n      \"uri\": \"\",\n      \"username\": \"\",\n      \"website\": \"\",\n      \"website_title\": \"\"\n    }\n  ],\n  \"next_href\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "eac8b61f-964a-4b6a-80cd-f5ec9c489d34",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "627779f0-5f27-4a62-86ec-93ed7309a331",
+      "documentation": "Returns a list of recent tracks from users followed by the authenticated user.",
+      "method": "get",
+      "endpoint": "me/followings/tracks",
+      "responses": [
+        {
+          "uuid": "f7a01a78-0b37-476c-8ac9-b569845c3d9f",
+          "body": "[\n  {\n    \"access\": \"{{oneOf (array 'playable' 'preview' 'blocked' '')}}\",\n    \"artwork_url\": \"\",\n    \"available_country_codes\": \"\",\n    \"bpm\": {{faker 'random.number'}},\n    \"comment_count\": {{faker 'random.number'}},\n    \"commentable\": {{faker 'random.boolean'}},\n    \"created_at\": \"\",\n    \"description\": \"\",\n    \"download_count\": {{faker 'random.number'}},\n    \"download_url\": \"\",\n    \"downloadable\": \"\",\n    \"duration\": {{faker 'random.number'}},\n    \"embeddable_by\": \"\",\n    \"favoritings_count\": {{faker 'random.number'}},\n    \"genre\": \"\",\n    \"id\": {{faker 'random.number'}},\n    \"isrc\": \"\",\n    \"key_signature\": \"\",\n    \"kind\": \"\",\n    \"label_name\": \"\",\n    \"license\": \"\",\n    \"permalink_url\": \"\",\n    \"playback_count\": {{faker 'random.number'}},\n    \"purchase_title\": \"\",\n    \"purchase_url\": \"\",\n    \"release\": \"\",\n    \"release_day\": {{faker 'random.number'}},\n    \"release_month\": {{faker 'random.number'}},\n    \"release_year\": {{faker 'random.number'}},\n    \"reposts_count\": {{faker 'random.number'}},\n    \"secret_uri\": \"\",\n    \"sharing\": \"\",\n    \"stream_url\": \"\",\n    \"streamable\": {{faker 'random.boolean'}},\n    \"tag_list\": \"\",\n    \"title\": \"\",\n    \"uri\": \"\",\n    \"user\": {\n      \"avatar_url\": \"\",\n      \"created_at\": \"{{faker 'date.recent' 365}}\",\n      \"id\": {{faker 'random.number'}},\n      \"kind\": \"\",\n      \"last_modified\": \"{{faker 'date.recent' 365}}\",\n      \"permalink\": \"\",\n      \"permalink_url\": \"\",\n      \"uri\": \"\",\n      \"username\": \"\"\n    },\n    \"user_favorite\": {{faker 'random.boolean'}},\n    \"user_playback_count\": {{faker 'random.number'}},\n    \"waveform_url\": \"\"\n  }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "165fef27-5206-4b6c-8a7e-10503e33fd38",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "7d9d1e26-8b62-4a04-b418-094c32f3291b",
+      "documentation": "Deletes a user who is followed by the authenticated user.",
+      "method": "delete",
+      "endpoint": "me/followings/:user_id",
+      "responses": [
+        {
+          "uuid": "f30fd563-873c-4575-80cb-6fa716aa23cc",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "73732321-2d6f-457f-bcf4-1c7c228f049e",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "872e2ae2-a3b8-401a-90af-f3d8d3c4464e",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Not Found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "bef2db30-8aed-4ff9-aee6-9fec9d1d68cc",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 422,
+          "label": "Unprocessable Entity",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "a770221c-db6e-40b0-9799-99605f48128e",
+      "documentation": "Returns a user who is followed by the authenticated user. (use /users/{user_id} instead, to fetch the user details)",
+      "method": "get",
+      "endpoint": "me/followings/:user_id",
+      "responses": [
+        {
+          "uuid": "e9e60613-45a3-4b07-ad5d-a91b8d5145cc",
+          "body": "{\n  \"avatar_url\": \"\",\n  \"city\": \"\",\n  \"country\": \"\",\n  \"created_at\": \"{{faker 'date.recent' 365}}\",\n  \"description\": \"\",\n  \"discogs_name\": \"\",\n  \"first_name\": \"\",\n  \"followers_count\": {{faker 'random.number'}},\n  \"followings_count\": {{faker 'random.number'}},\n  \"full_name\": \"\",\n  \"id\": {{faker 'random.number'}},\n  \"kind\": \"\",\n  \"last_modified\": \"{{faker 'date.recent' 365}}\",\n  \"last_name\": \"\",\n  \"myspace_name\": \"\",\n  \"permalink\": \"\",\n  \"permalink_url\": \"\",\n  \"plan\": \"\",\n  \"playlist_count\": {{faker 'random.number'}},\n  \"public_favorites_count\": {{faker 'random.number'}},\n  \"reposts_count\": {{faker 'random.number'}},\n  \"subscriptions\": \"\",\n  \"track_count\": {{faker 'random.number'}},\n  \"uri\": \"\",\n  \"username\": \"\",\n  \"website\": \"\",\n  \"website_title\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "07b450ea-a2dd-432e-859f-1f623b706cd1",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "0a0c9239-4209-4fca-b6bf-4739984e63a7",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Not Found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "4c33019a-8c86-4e12-a49b-b4e3b56d1bbc",
+      "documentation": "Follows a user.",
+      "method": "put",
+      "endpoint": "me/followings/:user_id",
+      "responses": [
+        {
+          "uuid": "8248988e-e0be-4626-9af8-7aec5628f7e9",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "f702d859-8904-44fb-9615-faf096dd3662",
+          "body": "{\n  \"avatar_url\": \"\",\n  \"city\": \"\",\n  \"country\": \"\",\n  \"created_at\": \"{{faker 'date.recent' 365}}\",\n  \"description\": \"\",\n  \"discogs_name\": \"\",\n  \"first_name\": \"\",\n  \"followers_count\": {{faker 'random.number'}},\n  \"followings_count\": {{faker 'random.number'}},\n  \"full_name\": \"\",\n  \"id\": {{faker 'random.number'}},\n  \"kind\": \"\",\n  \"last_modified\": \"{{faker 'date.recent' 365}}\",\n  \"last_name\": \"\",\n  \"myspace_name\": \"\",\n  \"permalink\": \"\",\n  \"permalink_url\": \"\",\n  \"plan\": \"\",\n  \"playlist_count\": {{faker 'random.number'}},\n  \"public_favorites_count\": {{faker 'random.number'}},\n  \"reposts_count\": {{faker 'random.number'}},\n  \"subscriptions\": \"\",\n  \"track_count\": {{faker 'random.number'}},\n  \"uri\": \"\",\n  \"username\": \"\",\n  \"website\": \"\",\n  \"website_title\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "8e19f5c4-af5e-46f1-92f9-37928c8a7b10",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "d38a5570-11ef-4a36-bab1-3348a1807e6f",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Not Found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "bb6da7a6-80b0-4276-9d69-a88fe4252d27",
+      "documentation": "Returns a list of favorited or liked tracks of the authenticated user.",
+      "method": "get",
+      "endpoint": "me/likes/tracks",
+      "responses": [
+        {
+          "uuid": "79ae2179-c631-437f-81f4-81ddbd740a74",
+          "body": "{\n  \"collection\": [\n    {\n      \"access\": \"{{oneOf (array 'playable' 'preview' 'blocked' '')}}\",\n      \"artwork_url\": \"\",\n      \"available_country_codes\": \"\",\n      \"bpm\": {{faker 'random.number'}},\n      \"comment_count\": {{faker 'random.number'}},\n      \"commentable\": {{faker 'random.boolean'}},\n      \"created_at\": \"\",\n      \"description\": \"\",\n      \"download_count\": {{faker 'random.number'}},\n      \"download_url\": \"\",\n      \"downloadable\": \"\",\n      \"duration\": {{faker 'random.number'}},\n      \"embeddable_by\": \"\",\n      \"favoritings_count\": {{faker 'random.number'}},\n      \"genre\": \"\",\n      \"id\": {{faker 'random.number'}},\n      \"isrc\": \"\",\n      \"key_signature\": \"\",\n      \"kind\": \"\",\n      \"label_name\": \"\",\n      \"license\": \"\",\n      \"permalink_url\": \"\",\n      \"playback_count\": {{faker 'random.number'}},\n      \"purchase_title\": \"\",\n      \"purchase_url\": \"\",\n      \"release\": \"\",\n      \"release_day\": {{faker 'random.number'}},\n      \"release_month\": {{faker 'random.number'}},\n      \"release_year\": {{faker 'random.number'}},\n      \"reposts_count\": {{faker 'random.number'}},\n      \"secret_uri\": \"\",\n      \"sharing\": \"\",\n      \"stream_url\": \"\",\n      \"streamable\": {{faker 'random.boolean'}},\n      \"tag_list\": \"\",\n      \"title\": \"\",\n      \"uri\": \"\",\n      \"user\": {\n        \"avatar_url\": \"\",\n        \"created_at\": \"{{faker 'date.recent' 365}}\",\n        \"id\": {{faker 'random.number'}},\n        \"kind\": \"\",\n        \"last_modified\": \"{{faker 'date.recent' 365}}\",\n        \"permalink\": \"\",\n        \"permalink_url\": \"\",\n        \"uri\": \"\",\n        \"username\": \"\"\n      },\n      \"user_favorite\": {{faker 'random.boolean'}},\n      \"user_playback_count\": {{faker 'random.number'}},\n      \"waveform_url\": \"\"\n    }\n  ],\n  \"next_href\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "72944cb7-1f58-4140-9706-43c4ba89dcc2",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "b252eb5f-9931-4fb9-9b4d-aa42f62fbe0f",
+      "documentation": "Returns user’s playlists (sets).",
+      "method": "get",
+      "endpoint": "me/playlists",
+      "responses": [
+        {
+          "uuid": "33265caa-610f-49e6-a54f-19688cd1d06b",
+          "body": "[\n  {\n    \"artwork_url\": \"\",\n    \"created_at\": \"\",\n    \"description\": \"\",\n    \"downloadable\": {{faker 'random.boolean'}},\n    \"duration\": {{faker 'random.number'}},\n    \"ean\": \"\",\n    \"embeddable_by\": \"\",\n    \"genre\": \"\",\n    \"id\": {{faker 'random.number'}},\n    \"kind\": \"\",\n    \"label\": {\n      \"avatar_url\": \"\",\n      \"created_at\": \"{{faker 'date.recent' 365}}\",\n      \"id\": {{faker 'random.number'}},\n      \"kind\": \"\",\n      \"last_modified\": \"{{faker 'date.recent' 365}}\",\n      \"permalink\": \"\",\n      \"permalink_url\": \"\",\n      \"uri\": \"\",\n      \"username\": \"\"\n    },\n    \"label_id\": {{faker 'random.number'}},\n    \"label_name\": \"\",\n    \"last_modified\": \"\",\n    \"license\": \"\",\n    \"likes_count\": {{faker 'random.number'}},\n    \"permalink\": \"\",\n    \"permalink_url\": \"\",\n    \"playlist_type\": \"\",\n    \"purchase_title\": \"\",\n    \"purchase_url\": \"\",\n    \"release\": \"\",\n    \"release_day\": {{faker 'random.number'}},\n    \"release_month\": {{faker 'random.number'}},\n    \"release_year\": {{faker 'random.number'}},\n    \"sharing\": \"\",\n    \"streamable\": {{faker 'random.boolean'}},\n    \"tag_list\": \"\",\n    \"tags\": \"\",\n    \"title\": \"\",\n    \"track_count\": {{faker 'random.number'}},\n    \"tracks\": [\n      {\n        \"access\": \"{{oneOf (array 'playable' 'preview' 'blocked' '')}}\",\n        \"artwork_url\": \"\",\n        \"available_country_codes\": \"\",\n        \"bpm\": {{faker 'random.number'}},\n        \"comment_count\": {{faker 'random.number'}},\n        \"commentable\": {{faker 'random.boolean'}},\n        \"created_at\": \"\",\n        \"description\": \"\",\n        \"download_count\": {{faker 'random.number'}},\n        \"download_url\": \"\",\n        \"downloadable\": \"\",\n        \"duration\": {{faker 'random.number'}},\n        \"embeddable_by\": \"\",\n        \"favoritings_count\": {{faker 'random.number'}},\n        \"genre\": \"\",\n        \"id\": {{faker 'random.number'}},\n        \"isrc\": \"\",\n        \"key_signature\": \"\",\n        \"kind\": \"\",\n        \"label_name\": \"\",\n        \"license\": \"\",\n        \"permalink_url\": \"\",\n        \"playback_count\": {{faker 'random.number'}},\n        \"purchase_title\": \"\",\n        \"purchase_url\": \"\",\n        \"release\": \"\",\n        \"release_day\": {{faker 'random.number'}},\n        \"release_month\": {{faker 'random.number'}},\n        \"release_year\": {{faker 'random.number'}},\n        \"reposts_count\": {{faker 'random.number'}},\n        \"secret_uri\": \"\",\n        \"sharing\": \"\",\n        \"stream_url\": \"\",\n        \"streamable\": {{faker 'random.boolean'}},\n        \"tag_list\": \"\",\n        \"title\": \"\",\n        \"uri\": \"\",\n        \"user\": {\n          \"avatar_url\": \"\",\n          \"created_at\": \"{{faker 'date.recent' 365}}\",\n          \"id\": {{faker 'random.number'}},\n          \"kind\": \"\",\n          \"last_modified\": \"{{faker 'date.recent' 365}}\",\n          \"permalink\": \"\",\n          \"permalink_url\": \"\",\n          \"uri\": \"\",\n          \"username\": \"\"\n        },\n        \"user_favorite\": {{faker 'random.boolean'}},\n        \"user_playback_count\": {{faker 'random.number'}},\n        \"waveform_url\": \"\"\n      }\n    ],\n    \"tracks_uri\": \"\",\n    \"type\": \"\",\n    \"uri\": \"\",\n    \"user\": {\n      \"avatar_url\": \"\",\n      \"created_at\": \"{{faker 'date.recent' 365}}\",\n      \"id\": {{faker 'random.number'}},\n      \"kind\": \"\",\n      \"last_modified\": \"{{faker 'date.recent' 365}}\",\n      \"permalink\": \"\",\n      \"permalink_url\": \"\",\n      \"uri\": \"\",\n      \"username\": \"\"\n    },\n    \"user_id\": {{faker 'random.number'}}\n  }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "4435473b-c206-411b-a43c-7f8225a7892d",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "d4456d78-d3cb-40ce-8e75-6eed9993f025",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Not Found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "5f4df585-ec0a-44e0-af33-289a2bde7e48",
+      "documentation": "Returns playlist. (use /playlists/{playlist_id} instead, to fetch the playlist details)",
+      "method": "get",
+      "endpoint": "me/playlists/:playlist_id",
+      "responses": [
+        {
+          "uuid": "df0e8d11-f737-44d8-833c-be57fba9f719",
+          "body": "{\n  \"artwork_url\": \"\",\n  \"created_at\": \"\",\n  \"description\": \"\",\n  \"downloadable\": {{faker 'random.boolean'}},\n  \"duration\": {{faker 'random.number'}},\n  \"ean\": \"\",\n  \"embeddable_by\": \"\",\n  \"genre\": \"\",\n  \"id\": {{faker 'random.number'}},\n  \"kind\": \"\",\n  \"label\": {\n    \"avatar_url\": \"\",\n    \"created_at\": \"{{faker 'date.recent' 365}}\",\n    \"id\": {{faker 'random.number'}},\n    \"kind\": \"\",\n    \"last_modified\": \"{{faker 'date.recent' 365}}\",\n    \"permalink\": \"\",\n    \"permalink_url\": \"\",\n    \"uri\": \"\",\n    \"username\": \"\"\n  },\n  \"label_id\": {{faker 'random.number'}},\n  \"label_name\": \"\",\n  \"last_modified\": \"\",\n  \"license\": \"\",\n  \"likes_count\": {{faker 'random.number'}},\n  \"permalink\": \"\",\n  \"permalink_url\": \"\",\n  \"playlist_type\": \"\",\n  \"purchase_title\": \"\",\n  \"purchase_url\": \"\",\n  \"release\": \"\",\n  \"release_day\": {{faker 'random.number'}},\n  \"release_month\": {{faker 'random.number'}},\n  \"release_year\": {{faker 'random.number'}},\n  \"sharing\": \"\",\n  \"streamable\": {{faker 'random.boolean'}},\n  \"tag_list\": \"\",\n  \"tags\": \"\",\n  \"title\": \"\",\n  \"track_count\": {{faker 'random.number'}},\n  \"tracks\": [\n    {\n      \"access\": \"{{oneOf (array 'playable' 'preview' 'blocked' '')}}\",\n      \"artwork_url\": \"\",\n      \"available_country_codes\": \"\",\n      \"bpm\": {{faker 'random.number'}},\n      \"comment_count\": {{faker 'random.number'}},\n      \"commentable\": {{faker 'random.boolean'}},\n      \"created_at\": \"\",\n      \"description\": \"\",\n      \"download_count\": {{faker 'random.number'}},\n      \"download_url\": \"\",\n      \"downloadable\": \"\",\n      \"duration\": {{faker 'random.number'}},\n      \"embeddable_by\": \"\",\n      \"favoritings_count\": {{faker 'random.number'}},\n      \"genre\": \"\",\n      \"id\": {{faker 'random.number'}},\n      \"isrc\": \"\",\n      \"key_signature\": \"\",\n      \"kind\": \"\",\n      \"label_name\": \"\",\n      \"license\": \"\",\n      \"permalink_url\": \"\",\n      \"playback_count\": {{faker 'random.number'}},\n      \"purchase_title\": \"\",\n      \"purchase_url\": \"\",\n      \"release\": \"\",\n      \"release_day\": {{faker 'random.number'}},\n      \"release_month\": {{faker 'random.number'}},\n      \"release_year\": {{faker 'random.number'}},\n      \"reposts_count\": {{faker 'random.number'}},\n      \"secret_uri\": \"\",\n      \"sharing\": \"\",\n      \"stream_url\": \"\",\n      \"streamable\": {{faker 'random.boolean'}},\n      \"tag_list\": \"\",\n      \"title\": \"\",\n      \"uri\": \"\",\n      \"user\": {\n        \"avatar_url\": \"\",\n        \"created_at\": \"{{faker 'date.recent' 365}}\",\n        \"id\": {{faker 'random.number'}},\n        \"kind\": \"\",\n        \"last_modified\": \"{{faker 'date.recent' 365}}\",\n        \"permalink\": \"\",\n        \"permalink_url\": \"\",\n        \"uri\": \"\",\n        \"username\": \"\"\n      },\n      \"user_favorite\": {{faker 'random.boolean'}},\n      \"user_playback_count\": {{faker 'random.number'}},\n      \"waveform_url\": \"\"\n    }\n  ],\n  \"tracks_uri\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\",\n  \"user\": {\n    \"avatar_url\": \"\",\n    \"created_at\": \"{{faker 'date.recent' 365}}\",\n    \"id\": {{faker 'random.number'}},\n    \"kind\": \"\",\n    \"last_modified\": \"{{faker 'date.recent' 365}}\",\n    \"permalink\": \"\",\n    \"permalink_url\": \"\",\n    \"uri\": \"\",\n    \"username\": \"\"\n  },\n  \"user_id\": {{faker 'random.number'}}\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "80a34dd0-626e-43d8-9a25-21ae673ee4ca",
+      "documentation": "Returns a list of user's tracks.",
+      "method": "get",
+      "endpoint": "me/tracks",
+      "responses": [
+        {
+          "uuid": "981197cf-2446-499d-8ee1-c19bba45136d",
+          "body": "{\n  \"collection\": [\n    {\n      \"access\": \"{{oneOf (array 'playable' 'preview' 'blocked' '')}}\",\n      \"artwork_url\": \"\",\n      \"available_country_codes\": \"\",\n      \"bpm\": {{faker 'random.number'}},\n      \"comment_count\": {{faker 'random.number'}},\n      \"commentable\": {{faker 'random.boolean'}},\n      \"created_at\": \"\",\n      \"description\": \"\",\n      \"download_count\": {{faker 'random.number'}},\n      \"download_url\": \"\",\n      \"downloadable\": \"\",\n      \"duration\": {{faker 'random.number'}},\n      \"embeddable_by\": \"\",\n      \"favoritings_count\": {{faker 'random.number'}},\n      \"genre\": \"\",\n      \"id\": {{faker 'random.number'}},\n      \"isrc\": \"\",\n      \"key_signature\": \"\",\n      \"kind\": \"\",\n      \"label_name\": \"\",\n      \"license\": \"\",\n      \"permalink_url\": \"\",\n      \"playback_count\": {{faker 'random.number'}},\n      \"purchase_title\": \"\",\n      \"purchase_url\": \"\",\n      \"release\": \"\",\n      \"release_day\": {{faker 'random.number'}},\n      \"release_month\": {{faker 'random.number'}},\n      \"release_year\": {{faker 'random.number'}},\n      \"reposts_count\": {{faker 'random.number'}},\n      \"secret_uri\": \"\",\n      \"sharing\": \"\",\n      \"stream_url\": \"\",\n      \"streamable\": {{faker 'random.boolean'}},\n      \"tag_list\": \"\",\n      \"title\": \"\",\n      \"uri\": \"\",\n      \"user\": {\n        \"avatar_url\": \"\",\n        \"created_at\": \"{{faker 'date.recent' 365}}\",\n        \"id\": {{faker 'random.number'}},\n        \"kind\": \"\",\n        \"last_modified\": \"{{faker 'date.recent' 365}}\",\n        \"permalink\": \"\",\n        \"permalink_url\": \"\",\n        \"uri\": \"\",\n        \"username\": \"\"\n      },\n      \"user_favorite\": {{faker 'random.boolean'}},\n      \"user_playback_count\": {{faker 'random.number'}},\n      \"waveform_url\": \"\"\n    }\n  ],\n  \"next_href\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "26bf8a5e-4a4b-457e-ab19-50c4d8ac1884",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "58dbb246-7fc9-4b1f-8499-b2b6d2c4a31c",
+      "documentation": "Returns a specified track. (use /tracks/{track_id} instead, to fetch the track details)",
+      "method": "get",
+      "endpoint": "me/tracks/:track_id",
+      "responses": [
+        {
+          "uuid": "4d8cea82-02ab-4935-b3ed-11e65c499c8a",
+          "body": "{\n  \"access\": \"{{oneOf (array 'playable' 'preview' 'blocked' '')}}\",\n  \"artwork_url\": \"\",\n  \"available_country_codes\": \"\",\n  \"bpm\": {{faker 'random.number'}},\n  \"comment_count\": {{faker 'random.number'}},\n  \"commentable\": {{faker 'random.boolean'}},\n  \"created_at\": \"\",\n  \"description\": \"\",\n  \"download_count\": {{faker 'random.number'}},\n  \"download_url\": \"\",\n  \"downloadable\": \"\",\n  \"duration\": {{faker 'random.number'}},\n  \"embeddable_by\": \"\",\n  \"favoritings_count\": {{faker 'random.number'}},\n  \"genre\": \"\",\n  \"id\": {{faker 'random.number'}},\n  \"isrc\": \"\",\n  \"key_signature\": \"\",\n  \"kind\": \"\",\n  \"label_name\": \"\",\n  \"license\": \"\",\n  \"permalink_url\": \"\",\n  \"playback_count\": {{faker 'random.number'}},\n  \"purchase_title\": \"\",\n  \"purchase_url\": \"\",\n  \"release\": \"\",\n  \"release_day\": {{faker 'random.number'}},\n  \"release_month\": {{faker 'random.number'}},\n  \"release_year\": {{faker 'random.number'}},\n  \"reposts_count\": {{faker 'random.number'}},\n  \"secret_uri\": \"\",\n  \"sharing\": \"\",\n  \"stream_url\": \"\",\n  \"streamable\": {{faker 'random.boolean'}},\n  \"tag_list\": \"\",\n  \"title\": \"\",\n  \"uri\": \"\",\n  \"user\": {\n    \"avatar_url\": \"\",\n    \"created_at\": \"{{faker 'date.recent' 365}}\",\n    \"id\": {{faker 'random.number'}},\n    \"kind\": \"\",\n    \"last_modified\": \"{{faker 'date.recent' 365}}\",\n    \"permalink\": \"\",\n    \"permalink_url\": \"\",\n    \"uri\": \"\",\n    \"username\": \"\"\n  },\n  \"user_favorite\": {{faker 'random.boolean'}},\n  \"user_playback_count\": {{faker 'random.number'}},\n  \"waveform_url\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "8787cdec-1c1f-4711-960a-e094804f7018",
+      "documentation": "This endpoint accepts POST requests and is used to provision access tokens once a user has authorized your application.",
+      "method": "post",
+      "endpoint": "oauth2/token",
+      "responses": [
+        {
+          "uuid": "5ef0f15c-4bc7-4d05-839d-aeeb08e1da40",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "4211ffdc-b07c-43e8-b7d7-9709eaef3953",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 400,
+          "label": "Bad Request",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "ab29cbd1-0b13-4a72-8862-0a1d3a09b597",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "f4374dae-45c2-429d-843c-722db71bd336",
+      "documentation": "Performs a playlist search based on a query",
+      "method": "get",
+      "endpoint": "playlists",
+      "responses": [
+        {
+          "uuid": "15689042-c68b-4f04-8026-5445fceb615f",
+          "body": "{\n  \"collection\": [\n    {\n      \"artwork_url\": \"\",\n      \"created_at\": \"\",\n      \"description\": \"\",\n      \"downloadable\": {{faker 'random.boolean'}},\n      \"duration\": {{faker 'random.number'}},\n      \"ean\": \"\",\n      \"embeddable_by\": \"\",\n      \"genre\": \"\",\n      \"id\": {{faker 'random.number'}},\n      \"kind\": \"\",\n      \"label\": {\n        \"avatar_url\": \"\",\n        \"created_at\": \"{{faker 'date.recent' 365}}\",\n        \"id\": {{faker 'random.number'}},\n        \"kind\": \"\",\n        \"last_modified\": \"{{faker 'date.recent' 365}}\",\n        \"permalink\": \"\",\n        \"permalink_url\": \"\",\n        \"uri\": \"\",\n        \"username\": \"\"\n      },\n      \"label_id\": {{faker 'random.number'}},\n      \"label_name\": \"\",\n      \"last_modified\": \"\",\n      \"license\": \"\",\n      \"likes_count\": {{faker 'random.number'}},\n      \"permalink\": \"\",\n      \"permalink_url\": \"\",\n      \"playlist_type\": \"\",\n      \"purchase_title\": \"\",\n      \"purchase_url\": \"\",\n      \"release\": \"\",\n      \"release_day\": {{faker 'random.number'}},\n      \"release_month\": {{faker 'random.number'}},\n      \"release_year\": {{faker 'random.number'}},\n      \"sharing\": \"\",\n      \"streamable\": {{faker 'random.boolean'}},\n      \"tag_list\": \"\",\n      \"tags\": \"\",\n      \"title\": \"\",\n      \"track_count\": {{faker 'random.number'}},\n      \"tracks\": [\n        {\n          \"access\": \"{{oneOf (array 'playable' 'preview' 'blocked' '')}}\",\n          \"artwork_url\": \"\",\n          \"available_country_codes\": \"\",\n          \"bpm\": {{faker 'random.number'}},\n          \"comment_count\": {{faker 'random.number'}},\n          \"commentable\": {{faker 'random.boolean'}},\n          \"created_at\": \"\",\n          \"description\": \"\",\n          \"download_count\": {{faker 'random.number'}},\n          \"download_url\": \"\",\n          \"downloadable\": \"\",\n          \"duration\": {{faker 'random.number'}},\n          \"embeddable_by\": \"\",\n          \"favoritings_count\": {{faker 'random.number'}},\n          \"genre\": \"\",\n          \"id\": {{faker 'random.number'}},\n          \"isrc\": \"\",\n          \"key_signature\": \"\",\n          \"kind\": \"\",\n          \"label_name\": \"\",\n          \"license\": \"\",\n          \"permalink_url\": \"\",\n          \"playback_count\": {{faker 'random.number'}},\n          \"purchase_title\": \"\",\n          \"purchase_url\": \"\",\n          \"release\": \"\",\n          \"release_day\": {{faker 'random.number'}},\n          \"release_month\": {{faker 'random.number'}},\n          \"release_year\": {{faker 'random.number'}},\n          \"reposts_count\": {{faker 'random.number'}},\n          \"secret_uri\": \"\",\n          \"sharing\": \"\",\n          \"stream_url\": \"\",\n          \"streamable\": {{faker 'random.boolean'}},\n          \"tag_list\": \"\",\n          \"title\": \"\",\n          \"uri\": \"\",\n          \"user\": {\n            \"avatar_url\": \"\",\n            \"created_at\": \"{{faker 'date.recent' 365}}\",\n            \"id\": {{faker 'random.number'}},\n            \"kind\": \"\",\n            \"last_modified\": \"{{faker 'date.recent' 365}}\",\n            \"permalink\": \"\",\n            \"permalink_url\": \"\",\n            \"uri\": \"\",\n            \"username\": \"\"\n          },\n          \"user_favorite\": {{faker 'random.boolean'}},\n          \"user_playback_count\": {{faker 'random.number'}},\n          \"waveform_url\": \"\"\n        }\n      ],\n      \"tracks_uri\": \"\",\n      \"type\": \"\",\n      \"uri\": \"\",\n      \"user\": {\n        \"avatar_url\": \"\",\n        \"created_at\": \"{{faker 'date.recent' 365}}\",\n        \"id\": {{faker 'random.number'}},\n        \"kind\": \"\",\n        \"last_modified\": \"{{faker 'date.recent' 365}}\",\n        \"permalink\": \"\",\n        \"permalink_url\": \"\",\n        \"uri\": \"\",\n        \"username\": \"\"\n      },\n      \"user_id\": {{faker 'random.number'}}\n    }\n  ],\n  \"next_href\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "5af9d0fd-fe58-43bb-a811-0a5c62c8bc16",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 400,
+          "label": "Bad Request",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "5699b163-bcef-4dc7-967f-7ff00e61249d",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "4d7453c1-e717-435a-8084-3c7a2eb7af67",
+      "documentation": "Creates a playlist.",
+      "method": "post",
+      "endpoint": "playlists",
+      "responses": [
+        {
+          "uuid": "ba7f9fd9-fe30-4936-a2c6-d3303812801e",
+          "body": "{\n  \"artwork_url\": \"\",\n  \"created_at\": \"\",\n  \"description\": \"\",\n  \"downloadable\": {{faker 'random.boolean'}},\n  \"duration\": {{faker 'random.number'}},\n  \"ean\": \"\",\n  \"embeddable_by\": \"\",\n  \"genre\": \"\",\n  \"id\": {{faker 'random.number'}},\n  \"kind\": \"\",\n  \"label_id\": {{faker 'random.number'}},\n  \"label_name\": \"\",\n  \"last_modified\": \"\",\n  \"license\": \"\",\n  \"permalink\": \"\",\n  \"permalink_url\": \"\",\n  \"playlist_type\": \"\",\n  \"purchase_title\": \"\",\n  \"purchase_url\": \"\",\n  \"release\": \"\",\n  \"release_day\": {{faker 'random.number'}},\n  \"release_month\": {{faker 'random.number'}},\n  \"release_year\": {{faker 'random.number'}},\n  \"sharing\": \"\",\n  \"streamable\": {{faker 'random.boolean'}},\n  \"tag_list\": \"\",\n  \"title\": \"\",\n  \"track_count\": {{faker 'random.number'}},\n  \"tracks\": [\n    {\n      \"artwork_url\": \"\",\n      \"bpm\": {{faker 'random.number'}},\n      \"comment_count\": {{faker 'random.number'}},\n      \"commentable\": {{faker 'random.boolean'}},\n      \"created_at\": \"\",\n      \"description\": \"\",\n      \"download_count\": {{faker 'random.number'}},\n      \"downloadable\": \"\",\n      \"duration\": {{faker 'random.number'}},\n      \"embeddable_by\": \"\",\n      \"favoritings_count\": {{faker 'random.number'}},\n      \"genre\": \"\",\n      \"id\": {{faker 'random.number'}},\n      \"isrc\": \"\",\n      \"key_signature\": \"\",\n      \"kind\": \"\",\n      \"label_name\": \"\",\n      \"license\": \"\",\n      \"permalink_url\": \"\",\n      \"playback_count\": {{faker 'random.number'}},\n      \"purchase_title\": \"\",\n      \"purchase_url\": \"\",\n      \"release\": \"\",\n      \"release_day\": {{faker 'random.number'}},\n      \"release_month\": {{faker 'random.number'}},\n      \"release_year\": {{faker 'random.number'}},\n      \"sharing\": \"\",\n      \"stream_url\": \"\",\n      \"streamable\": {{faker 'random.boolean'}},\n      \"tag_list\": \"\",\n      \"title\": \"\",\n      \"uri\": \"\",\n      \"user\": {\n        \"avatar_url\": \"\",\n        \"created_at\": \"{{faker 'date.recent' 365}}\",\n        \"id\": {{faker 'random.number'}},\n        \"kind\": \"\",\n        \"last_modified\": \"{{faker 'date.recent' 365}}\",\n        \"permalink\": \"\",\n        \"permalink_url\": \"\",\n        \"uri\": \"\",\n        \"username\": \"\"\n      },\n      \"user_favorite\": {{faker 'random.boolean'}},\n      \"user_playback_count\": {{faker 'random.number'}},\n      \"waveform_url\": \"\"\n    }\n  ],\n  \"type\": \"\",\n  \"uri\": \"\",\n  \"user\": {\n    \"avatar_url\": \"\",\n    \"created_at\": \"{{faker 'date.recent' 365}}\",\n    \"id\": {{faker 'random.number'}},\n    \"kind\": \"\",\n    \"last_modified\": \"{{faker 'date.recent' 365}}\",\n    \"permalink\": \"\",\n    \"permalink_url\": \"\",\n    \"uri\": \"\",\n    \"username\": \"\"\n  },\n  \"user_id\": {{faker 'random.number'}}\n}",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "e8b70660-eb15-475d-bebe-f3101369abc1",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "bc08f025-5598-4ad4-a315-a65aec7e0da2",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Not Found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "230c7d20-4588-4beb-9311-5db3fe9d7e37",
+      "documentation": "Deletes a playlist.",
+      "method": "delete",
+      "endpoint": "playlists/:playlist_id",
+      "responses": [
+        {
+          "uuid": "7eb3ffc2-0720-4778-b160-51d4eacaea6e",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "276af198-becb-4efe-a6e8-b49fd65e5438",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Not Found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "91de4b18-4781-47d0-907a-907b352fecdd",
+      "documentation": "Returns a playlist.",
+      "method": "get",
+      "endpoint": "playlists/:playlist_id",
+      "responses": [
+        {
+          "uuid": "6bae8362-ab5f-4887-b433-b2fa59f5477a",
+          "body": "{\n  \"artwork_url\": \"\",\n  \"created_at\": \"\",\n  \"description\": \"\",\n  \"downloadable\": {{faker 'random.boolean'}},\n  \"duration\": {{faker 'random.number'}},\n  \"ean\": \"\",\n  \"embeddable_by\": \"\",\n  \"genre\": \"\",\n  \"id\": {{faker 'random.number'}},\n  \"kind\": \"\",\n  \"label\": {\n    \"avatar_url\": \"\",\n    \"created_at\": \"{{faker 'date.recent' 365}}\",\n    \"id\": {{faker 'random.number'}},\n    \"kind\": \"\",\n    \"last_modified\": \"{{faker 'date.recent' 365}}\",\n    \"permalink\": \"\",\n    \"permalink_url\": \"\",\n    \"uri\": \"\",\n    \"username\": \"\"\n  },\n  \"label_id\": {{faker 'random.number'}},\n  \"label_name\": \"\",\n  \"last_modified\": \"\",\n  \"license\": \"\",\n  \"likes_count\": {{faker 'random.number'}},\n  \"permalink\": \"\",\n  \"permalink_url\": \"\",\n  \"playlist_type\": \"\",\n  \"purchase_title\": \"\",\n  \"purchase_url\": \"\",\n  \"release\": \"\",\n  \"release_day\": {{faker 'random.number'}},\n  \"release_month\": {{faker 'random.number'}},\n  \"release_year\": {{faker 'random.number'}},\n  \"sharing\": \"\",\n  \"streamable\": {{faker 'random.boolean'}},\n  \"tag_list\": \"\",\n  \"tags\": \"\",\n  \"title\": \"\",\n  \"track_count\": {{faker 'random.number'}},\n  \"tracks\": [\n    {\n      \"access\": \"{{oneOf (array 'playable' 'preview' 'blocked' '')}}\",\n      \"artwork_url\": \"\",\n      \"available_country_codes\": \"\",\n      \"bpm\": {{faker 'random.number'}},\n      \"comment_count\": {{faker 'random.number'}},\n      \"commentable\": {{faker 'random.boolean'}},\n      \"created_at\": \"\",\n      \"description\": \"\",\n      \"download_count\": {{faker 'random.number'}},\n      \"download_url\": \"\",\n      \"downloadable\": \"\",\n      \"duration\": {{faker 'random.number'}},\n      \"embeddable_by\": \"\",\n      \"favoritings_count\": {{faker 'random.number'}},\n      \"genre\": \"\",\n      \"id\": {{faker 'random.number'}},\n      \"isrc\": \"\",\n      \"key_signature\": \"\",\n      \"kind\": \"\",\n      \"label_name\": \"\",\n      \"license\": \"\",\n      \"permalink_url\": \"\",\n      \"playback_count\": {{faker 'random.number'}},\n      \"purchase_title\": \"\",\n      \"purchase_url\": \"\",\n      \"release\": \"\",\n      \"release_day\": {{faker 'random.number'}},\n      \"release_month\": {{faker 'random.number'}},\n      \"release_year\": {{faker 'random.number'}},\n      \"reposts_count\": {{faker 'random.number'}},\n      \"secret_uri\": \"\",\n      \"sharing\": \"\",\n      \"stream_url\": \"\",\n      \"streamable\": {{faker 'random.boolean'}},\n      \"tag_list\": \"\",\n      \"title\": \"\",\n      \"uri\": \"\",\n      \"user\": {\n        \"avatar_url\": \"\",\n        \"created_at\": \"{{faker 'date.recent' 365}}\",\n        \"id\": {{faker 'random.number'}},\n        \"kind\": \"\",\n        \"last_modified\": \"{{faker 'date.recent' 365}}\",\n        \"permalink\": \"\",\n        \"permalink_url\": \"\",\n        \"uri\": \"\",\n        \"username\": \"\"\n      },\n      \"user_favorite\": {{faker 'random.boolean'}},\n      \"user_playback_count\": {{faker 'random.number'}},\n      \"waveform_url\": \"\"\n    }\n  ],\n  \"tracks_uri\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\",\n  \"user\": {\n    \"avatar_url\": \"\",\n    \"created_at\": \"{{faker 'date.recent' 365}}\",\n    \"id\": {{faker 'random.number'}},\n    \"kind\": \"\",\n    \"last_modified\": \"{{faker 'date.recent' 365}}\",\n    \"permalink\": \"\",\n    \"permalink_url\": \"\",\n    \"uri\": \"\",\n    \"username\": \"\"\n  },\n  \"user_id\": {{faker 'random.number'}}\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "9b02913c-4552-4f4b-9185-0eea9295e3b7",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 400,
+          "label": "Bad Request",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "1770c661-f532-45c8-ac7c-726f6e874c30",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "0d09ecf3-de6a-4fd8-976b-ae035a8379f3",
+      "documentation": "Updates a playlist.",
+      "method": "put",
+      "endpoint": "playlists/:playlist_id",
+      "responses": [
+        {
+          "uuid": "3be7291a-0302-4691-b605-0217e661125b",
+          "body": "{\n  \"artwork_url\": \"\",\n  \"created_at\": \"\",\n  \"description\": \"\",\n  \"downloadable\": {{faker 'random.boolean'}},\n  \"duration\": {{faker 'random.number'}},\n  \"ean\": \"\",\n  \"embeddable_by\": \"\",\n  \"genre\": \"\",\n  \"id\": {{faker 'random.number'}},\n  \"kind\": \"\",\n  \"label_id\": {{faker 'random.number'}},\n  \"label_name\": \"\",\n  \"last_modified\": \"\",\n  \"license\": \"\",\n  \"permalink\": \"\",\n  \"permalink_url\": \"\",\n  \"playlist_type\": \"\",\n  \"purchase_title\": \"\",\n  \"purchase_url\": \"\",\n  \"release\": \"\",\n  \"release_day\": {{faker 'random.number'}},\n  \"release_month\": {{faker 'random.number'}},\n  \"release_year\": {{faker 'random.number'}},\n  \"sharing\": \"\",\n  \"streamable\": {{faker 'random.boolean'}},\n  \"tag_list\": \"\",\n  \"title\": \"\",\n  \"track_count\": {{faker 'random.number'}},\n  \"tracks\": [\n    {\n      \"artwork_url\": \"\",\n      \"bpm\": {{faker 'random.number'}},\n      \"comment_count\": {{faker 'random.number'}},\n      \"commentable\": {{faker 'random.boolean'}},\n      \"created_at\": \"\",\n      \"description\": \"\",\n      \"download_count\": {{faker 'random.number'}},\n      \"downloadable\": \"\",\n      \"duration\": {{faker 'random.number'}},\n      \"embeddable_by\": \"\",\n      \"favoritings_count\": {{faker 'random.number'}},\n      \"genre\": \"\",\n      \"id\": {{faker 'random.number'}},\n      \"isrc\": \"\",\n      \"key_signature\": \"\",\n      \"kind\": \"\",\n      \"label_name\": \"\",\n      \"license\": \"\",\n      \"permalink_url\": \"\",\n      \"playback_count\": {{faker 'random.number'}},\n      \"purchase_title\": \"\",\n      \"purchase_url\": \"\",\n      \"release\": \"\",\n      \"release_day\": {{faker 'random.number'}},\n      \"release_month\": {{faker 'random.number'}},\n      \"release_year\": {{faker 'random.number'}},\n      \"sharing\": \"\",\n      \"stream_url\": \"\",\n      \"streamable\": {{faker 'random.boolean'}},\n      \"tag_list\": \"\",\n      \"title\": \"\",\n      \"uri\": \"\",\n      \"user\": {\n        \"avatar_url\": \"\",\n        \"created_at\": \"{{faker 'date.recent' 365}}\",\n        \"id\": {{faker 'random.number'}},\n        \"kind\": \"\",\n        \"last_modified\": \"{{faker 'date.recent' 365}}\",\n        \"permalink\": \"\",\n        \"permalink_url\": \"\",\n        \"uri\": \"\",\n        \"username\": \"\"\n      },\n      \"user_favorite\": {{faker 'random.boolean'}},\n      \"user_playback_count\": {{faker 'random.number'}},\n      \"waveform_url\": \"\"\n    }\n  ],\n  \"type\": \"\",\n  \"uri\": \"\",\n  \"user\": {\n    \"avatar_url\": \"\",\n    \"created_at\": \"{{faker 'date.recent' 365}}\",\n    \"id\": {{faker 'random.number'}},\n    \"kind\": \"\",\n    \"last_modified\": \"{{faker 'date.recent' 365}}\",\n    \"permalink\": \"\",\n    \"permalink_url\": \"\",\n    \"uri\": \"\",\n    \"username\": \"\"\n  },\n  \"user_id\": {{faker 'random.number'}}\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "9417eab7-3ff8-4234-902b-c2eb1666b770",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "68e5b8b2-aa87-4454-b7d0-e393db8387b7",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Not Found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "a589078e-e05e-40c9-a23b-feccb102bfec",
+      "documentation": "Returns a collection of playlist's reposters.",
+      "method": "get",
+      "endpoint": "playlists/:playlist_id/reposters",
+      "responses": [
+        {
+          "uuid": "9f6d0403-a387-49d7-921e-05ca964509f4",
+          "body": "{\n  \"collection\": [\n    {\n      \"avatar_url\": \"\",\n      \"created_at\": \"{{faker 'date.recent' 365}}\",\n      \"id\": {{faker 'random.number'}},\n      \"kind\": \"\",\n      \"last_modified\": \"{{faker 'date.recent' 365}}\",\n      \"permalink\": \"\",\n      \"permalink_url\": \"\",\n      \"uri\": \"\",\n      \"username\": \"\"\n    }\n  ],\n  \"next_href\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "e293c331-18d7-423e-8efc-15ac510c7d61",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "cded7350-ae88-41d8-8cfe-21e66a1ad577",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Not Found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "3af8f341-0eea-41b6-b4a3-0f5b6403a19d",
+      "documentation": "Returns tracks under a playlist.",
+      "method": "get",
+      "endpoint": "playlists/:playlist_id/tracks",
+      "responses": [
+        {
+          "uuid": "5a62f6dc-65a9-44cf-8e00-0f4f9afa30cd",
+          "body": "{\n  \"collection\": [\n    {\n      \"access\": \"{{oneOf (array 'playable' 'preview' 'blocked' '')}}\",\n      \"artwork_url\": \"\",\n      \"available_country_codes\": \"\",\n      \"bpm\": {{faker 'random.number'}},\n      \"comment_count\": {{faker 'random.number'}},\n      \"commentable\": {{faker 'random.boolean'}},\n      \"created_at\": \"\",\n      \"description\": \"\",\n      \"download_count\": {{faker 'random.number'}},\n      \"download_url\": \"\",\n      \"downloadable\": \"\",\n      \"duration\": {{faker 'random.number'}},\n      \"embeddable_by\": \"\",\n      \"favoritings_count\": {{faker 'random.number'}},\n      \"genre\": \"\",\n      \"id\": {{faker 'random.number'}},\n      \"isrc\": \"\",\n      \"key_signature\": \"\",\n      \"kind\": \"\",\n      \"label_name\": \"\",\n      \"license\": \"\",\n      \"permalink_url\": \"\",\n      \"playback_count\": {{faker 'random.number'}},\n      \"purchase_title\": \"\",\n      \"purchase_url\": \"\",\n      \"release\": \"\",\n      \"release_day\": {{faker 'random.number'}},\n      \"release_month\": {{faker 'random.number'}},\n      \"release_year\": {{faker 'random.number'}},\n      \"reposts_count\": {{faker 'random.number'}},\n      \"secret_uri\": \"\",\n      \"sharing\": \"\",\n      \"stream_url\": \"\",\n      \"streamable\": {{faker 'random.boolean'}},\n      \"tag_list\": \"\",\n      \"title\": \"\",\n      \"uri\": \"\",\n      \"user\": {\n        \"avatar_url\": \"\",\n        \"created_at\": \"{{faker 'date.recent' 365}}\",\n        \"id\": {{faker 'random.number'}},\n        \"kind\": \"\",\n        \"last_modified\": \"{{faker 'date.recent' 365}}\",\n        \"permalink\": \"\",\n        \"permalink_url\": \"\",\n        \"uri\": \"\",\n        \"username\": \"\"\n      },\n      \"user_favorite\": {{faker 'random.boolean'}},\n      \"user_playback_count\": {{faker 'random.number'}},\n      \"waveform_url\": \"\"\n    }\n  ],\n  \"next_href\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "56592343-8852-4166-933c-5978a1c70411",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 400,
+          "label": "Bad Request",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "adfa1a8f-dbf3-400d-aadf-914e8f9edef5",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "45b16184-10dc-4676-a5c5-76943402fd52",
+      "documentation": "Removes a repost on a playlist as the authenticated user",
+      "method": "delete",
+      "endpoint": "reposts/playlists/:playlist_id",
+      "responses": [
+        {
+          "uuid": "3234663c-daca-402e-815b-8aa0de0e1131",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "bccf821a-2ac0-4304-a213-868e293e2880",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "603490c0-84b8-464a-a98d-8340313f0763",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Not Found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "5d9bc595-52cd-426f-a69e-437b6a971884",
+      "documentation": "Reposts a playlist as the authenticated user",
+      "method": "post",
+      "endpoint": "reposts/playlists/:playlist_id",
+      "responses": [
+        {
+          "uuid": "ca177fe7-c5f3-4a90-a22b-d27e593c5f30",
+          "body": "",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "Created",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "0fea0bf5-b921-47c6-b770-6f6d31e572a0",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "61936c5b-36f4-4452-85bf-8c6b1dc2f880",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Not Found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "fd885bd4-9eed-4411-8d22-14e326e74114",
+      "documentation": "Removes a repost on a track as the authenticated user",
+      "method": "delete",
+      "endpoint": "reposts/tracks/:track_id",
+      "responses": [
+        {
+          "uuid": "6c707f98-4a88-4d9b-b496-01fff3835951",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "195e4a80-7049-4a8a-b974-198f786f0a8e",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "597fa2b3-4bb1-4fab-af36-02a2100d640b",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Not Found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "e543f6cd-ab93-482c-9598-13048c9aabc2",
+      "documentation": "Reposts a track as the authenticated user",
+      "method": "post",
+      "endpoint": "reposts/tracks/:track_id",
+      "responses": [
+        {
+          "uuid": "666ce8d0-fa2f-4530-af16-68b1a515cbef",
+          "body": "",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "Created",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "7f0a86a8-3440-4aec-88da-13fdf0d5e01e",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "7a1707f8-23e3-486e-9e9a-e329ada42779",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Not Found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "1568b27f-457a-4154-9ea4-346c31da09d2",
+      "documentation": "Resolves soundcloud.com URLs to Resource URLs to use with the API.",
+      "method": "get",
+      "endpoint": "resolve",
+      "responses": [
+        {
+          "uuid": "3c0e54b3-c50f-4b1b-8de0-0eebda4e52e2",
+          "body": "{\n  \"location\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 302,
+          "label": "Found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "0824ce8e-c840-4640-a231-35f54c13020a",
+      "documentation": "Performs a track search based on a query",
+      "method": "get",
+      "endpoint": "tracks",
+      "responses": [
+        {
+          "uuid": "fcb58a64-f0d7-4df2-afc8-bbee73c0ba80",
+          "body": "{\n  \"collection\": [\n    {\n      \"access\": \"{{oneOf (array 'playable' 'preview' 'blocked' '')}}\",\n      \"artwork_url\": \"\",\n      \"available_country_codes\": \"\",\n      \"bpm\": {{faker 'random.number'}},\n      \"comment_count\": {{faker 'random.number'}},\n      \"commentable\": {{faker 'random.boolean'}},\n      \"created_at\": \"\",\n      \"description\": \"\",\n      \"download_count\": {{faker 'random.number'}},\n      \"download_url\": \"\",\n      \"downloadable\": \"\",\n      \"duration\": {{faker 'random.number'}},\n      \"embeddable_by\": \"\",\n      \"favoritings_count\": {{faker 'random.number'}},\n      \"genre\": \"\",\n      \"id\": {{faker 'random.number'}},\n      \"isrc\": \"\",\n      \"key_signature\": \"\",\n      \"kind\": \"\",\n      \"label_name\": \"\",\n      \"license\": \"\",\n      \"permalink_url\": \"\",\n      \"playback_count\": {{faker 'random.number'}},\n      \"purchase_title\": \"\",\n      \"purchase_url\": \"\",\n      \"release\": \"\",\n      \"release_day\": {{faker 'random.number'}},\n      \"release_month\": {{faker 'random.number'}},\n      \"release_year\": {{faker 'random.number'}},\n      \"reposts_count\": {{faker 'random.number'}},\n      \"secret_uri\": \"\",\n      \"sharing\": \"\",\n      \"stream_url\": \"\",\n      \"streamable\": {{faker 'random.boolean'}},\n      \"tag_list\": \"\",\n      \"title\": \"\",\n      \"uri\": \"\",\n      \"user\": {\n        \"avatar_url\": \"\",\n        \"created_at\": \"{{faker 'date.recent' 365}}\",\n        \"id\": {{faker 'random.number'}},\n        \"kind\": \"\",\n        \"last_modified\": \"{{faker 'date.recent' 365}}\",\n        \"permalink\": \"\",\n        \"permalink_url\": \"\",\n        \"uri\": \"\",\n        \"username\": \"\"\n      },\n      \"user_favorite\": {{faker 'random.boolean'}},\n      \"user_playback_count\": {{faker 'random.number'}},\n      \"waveform_url\": \"\"\n    }\n  ],\n  \"next_href\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "eebd165d-c661-4c78-a383-53cbe146919b",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 400,
+          "label": "Bad Request",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "aba7790e-291d-4f8a-8b4e-74339ed2cda1",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "9e3db311-45e9-4b93-92fc-73eb455b432a",
+          "body": "",
+          "latency": 0,
+          "statusCode": 500,
+          "label": "Internal Server Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "b85eea72-8a01-4a01-948e-80ea6620a17f",
+      "documentation": "Uploads a new track.",
+      "method": "post",
+      "endpoint": "tracks",
+      "responses": [
+        {
+          "uuid": "d06197fb-a88c-44cd-bc6f-238cadb7c3b1",
+          "body": "{\n  \"access\": \"{{oneOf (array 'playable' 'preview' 'blocked' '')}}\",\n  \"artwork_url\": \"\",\n  \"available_country_codes\": \"\",\n  \"bpm\": {{faker 'random.number'}},\n  \"comment_count\": {{faker 'random.number'}},\n  \"commentable\": {{faker 'random.boolean'}},\n  \"created_at\": \"\",\n  \"description\": \"\",\n  \"download_count\": {{faker 'random.number'}},\n  \"download_url\": \"\",\n  \"downloadable\": \"\",\n  \"duration\": {{faker 'random.number'}},\n  \"embeddable_by\": \"\",\n  \"favoritings_count\": {{faker 'random.number'}},\n  \"genre\": \"\",\n  \"id\": {{faker 'random.number'}},\n  \"isrc\": \"\",\n  \"key_signature\": \"\",\n  \"kind\": \"\",\n  \"label_name\": \"\",\n  \"license\": \"\",\n  \"permalink_url\": \"\",\n  \"playback_count\": {{faker 'random.number'}},\n  \"purchase_title\": \"\",\n  \"purchase_url\": \"\",\n  \"release\": \"\",\n  \"release_day\": {{faker 'random.number'}},\n  \"release_month\": {{faker 'random.number'}},\n  \"release_year\": {{faker 'random.number'}},\n  \"reposts_count\": {{faker 'random.number'}},\n  \"secret_uri\": \"\",\n  \"sharing\": \"\",\n  \"stream_url\": \"\",\n  \"streamable\": {{faker 'random.boolean'}},\n  \"tag_list\": \"\",\n  \"title\": \"\",\n  \"uri\": \"\",\n  \"user\": {\n    \"avatar_url\": \"\",\n    \"created_at\": \"{{faker 'date.recent' 365}}\",\n    \"id\": {{faker 'random.number'}},\n    \"kind\": \"\",\n    \"last_modified\": \"{{faker 'date.recent' 365}}\",\n    \"permalink\": \"\",\n    \"permalink_url\": \"\",\n    \"uri\": \"\",\n    \"username\": \"\"\n  },\n  \"user_favorite\": {{faker 'random.boolean'}},\n  \"user_playback_count\": {{faker 'random.number'}},\n  \"waveform_url\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "091a9d88-d9f6-438d-a9ff-f1125b88d7a5",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 400,
+          "label": "Bad Request",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "f988774a-443f-4702-b818-61c4cbccc9b2",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "365140e4-1729-4cc8-ab23-b7a5bb2709b3",
+      "documentation": "Deletes a track.",
+      "method": "delete",
+      "endpoint": "tracks/:track_id",
+      "responses": [
+        {
+          "uuid": "1918dde8-59b2-4aef-9d0c-d43adcfdb774",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "0355f535-09d0-4737-9ae0-81bd54e0cf64",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Not Found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "77fe3e56-12cf-418b-94c9-79b361dee114",
+      "documentation": "Returns a track.",
+      "method": "get",
+      "endpoint": "tracks/:track_id",
+      "responses": [
+        {
+          "uuid": "4085fe6d-8b25-4d85-8b0d-7966dc9a1f55",
+          "body": "{\n  \"access\": \"{{oneOf (array 'playable' 'preview' 'blocked' '')}}\",\n  \"artwork_url\": \"\",\n  \"available_country_codes\": \"\",\n  \"bpm\": {{faker 'random.number'}},\n  \"comment_count\": {{faker 'random.number'}},\n  \"commentable\": {{faker 'random.boolean'}},\n  \"created_at\": \"\",\n  \"description\": \"\",\n  \"download_count\": {{faker 'random.number'}},\n  \"download_url\": \"\",\n  \"downloadable\": \"\",\n  \"duration\": {{faker 'random.number'}},\n  \"embeddable_by\": \"\",\n  \"favoritings_count\": {{faker 'random.number'}},\n  \"genre\": \"\",\n  \"id\": {{faker 'random.number'}},\n  \"isrc\": \"\",\n  \"key_signature\": \"\",\n  \"kind\": \"\",\n  \"label_name\": \"\",\n  \"license\": \"\",\n  \"permalink_url\": \"\",\n  \"playback_count\": {{faker 'random.number'}},\n  \"purchase_title\": \"\",\n  \"purchase_url\": \"\",\n  \"release\": \"\",\n  \"release_day\": {{faker 'random.number'}},\n  \"release_month\": {{faker 'random.number'}},\n  \"release_year\": {{faker 'random.number'}},\n  \"reposts_count\": {{faker 'random.number'}},\n  \"secret_uri\": \"\",\n  \"sharing\": \"\",\n  \"stream_url\": \"\",\n  \"streamable\": {{faker 'random.boolean'}},\n  \"tag_list\": \"\",\n  \"title\": \"\",\n  \"uri\": \"\",\n  \"user\": {\n    \"avatar_url\": \"\",\n    \"created_at\": \"{{faker 'date.recent' 365}}\",\n    \"id\": {{faker 'random.number'}},\n    \"kind\": \"\",\n    \"last_modified\": \"{{faker 'date.recent' 365}}\",\n    \"permalink\": \"\",\n    \"permalink_url\": \"\",\n    \"uri\": \"\",\n    \"username\": \"\"\n  },\n  \"user_favorite\": {{faker 'random.boolean'}},\n  \"user_playback_count\": {{faker 'random.number'}},\n  \"waveform_url\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "817e7181-9a21-46ae-b780-dc04e8f683fd",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "4c96b371-25f2-4a40-806d-4810f2fe3d46",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Not Found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "931ae4d3-d072-4acc-ad7c-996f70218578",
+      "documentation": "Updates a track's information.",
+      "method": "put",
+      "endpoint": "tracks/:track_id",
+      "responses": [
+        {
+          "uuid": "77fe7877-965b-4e89-8981-88f736affa5f",
+          "body": "{\n  \"access\": \"{{oneOf (array 'playable' 'preview' 'blocked' '')}}\",\n  \"artwork_url\": \"\",\n  \"available_country_codes\": \"\",\n  \"bpm\": {{faker 'random.number'}},\n  \"comment_count\": {{faker 'random.number'}},\n  \"commentable\": {{faker 'random.boolean'}},\n  \"created_at\": \"\",\n  \"description\": \"\",\n  \"download_count\": {{faker 'random.number'}},\n  \"download_url\": \"\",\n  \"downloadable\": \"\",\n  \"duration\": {{faker 'random.number'}},\n  \"embeddable_by\": \"\",\n  \"favoritings_count\": {{faker 'random.number'}},\n  \"genre\": \"\",\n  \"id\": {{faker 'random.number'}},\n  \"isrc\": \"\",\n  \"key_signature\": \"\",\n  \"kind\": \"\",\n  \"label_name\": \"\",\n  \"license\": \"\",\n  \"permalink_url\": \"\",\n  \"playback_count\": {{faker 'random.number'}},\n  \"purchase_title\": \"\",\n  \"purchase_url\": \"\",\n  \"release\": \"\",\n  \"release_day\": {{faker 'random.number'}},\n  \"release_month\": {{faker 'random.number'}},\n  \"release_year\": {{faker 'random.number'}},\n  \"reposts_count\": {{faker 'random.number'}},\n  \"secret_uri\": \"\",\n  \"sharing\": \"\",\n  \"stream_url\": \"\",\n  \"streamable\": {{faker 'random.boolean'}},\n  \"tag_list\": \"\",\n  \"title\": \"\",\n  \"uri\": \"\",\n  \"user\": {\n    \"avatar_url\": \"\",\n    \"created_at\": \"{{faker 'date.recent' 365}}\",\n    \"id\": {{faker 'random.number'}},\n    \"kind\": \"\",\n    \"last_modified\": \"{{faker 'date.recent' 365}}\",\n    \"permalink\": \"\",\n    \"permalink_url\": \"\",\n    \"uri\": \"\",\n    \"username\": \"\"\n  },\n  \"user_favorite\": {{faker 'random.boolean'}},\n  \"user_playback_count\": {{faker 'random.number'}},\n  \"waveform_url\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "6abedeb4-6305-420e-922b-a49d1f8eae02",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 400,
+          "label": "Bad Request",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "461093c0-42a5-4dfd-85e9-a45323911078",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "51c8f817-ad3d-411e-a283-c78ea3caf8c0",
+      "documentation": "Returns the comments posted on the track(track_id).",
+      "method": "get",
+      "endpoint": "tracks/:track_id/comments",
+      "responses": [
+        {
+          "uuid": "6b98ace3-19c5-4250-8b13-2c30277e2664",
+          "body": "{\n  \"collection\": [\n    {\n      \"body\": \"\",\n      \"created_at\": \"\",\n      \"id\": {{faker 'random.number'}},\n      \"kind\": \"\",\n      \"timestamp\": \"\",\n      \"track_id\": {{faker 'random.number'}},\n      \"uri\": \"\",\n      \"user\": {\n        \"avatar_url\": \"\",\n        \"followers_count\": {{faker 'random.number'}},\n        \"followings_count\": {{faker 'random.number'}},\n        \"id\": {{faker 'random.number'}},\n        \"kind\": \"\",\n        \"last_modified\": \"\",\n        \"permalink\": \"\",\n        \"permalink_url\": \"\",\n        \"reposts_count\": {{faker 'random.number'}},\n        \"uri\": \"\",\n        \"username\": \"\"\n      },\n      \"user_id\": {{faker 'random.number'}}\n    }\n  ],\n  \"next_href\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "71d58995-817a-4052-82d3-0454fe47febc",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "51d695a2-ffbe-4fc5-89f2-5e989048624d",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Not Found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "d15b6868-7fca-47de-a492-db222eb69f51",
+      "documentation": "Returns the newly created comment on success",
+      "method": "post",
+      "endpoint": "tracks/:track_id/comments",
+      "responses": [
+        {
+          "uuid": "ee7801a8-402d-4bd6-8a04-359c22513a1b",
+          "body": "{\n  \"body\": \"\",\n  \"created_at\": \"\",\n  \"id\": {{faker 'random.number'}},\n  \"kind\": \"\",\n  \"timestamp\": \"\",\n  \"track_id\": {{faker 'random.number'}},\n  \"uri\": \"\",\n  \"user\": {\n    \"avatar_url\": \"\",\n    \"followers_count\": {{faker 'random.number'}},\n    \"followings_count\": {{faker 'random.number'}},\n    \"id\": {{faker 'random.number'}},\n    \"kind\": \"\",\n    \"last_modified\": \"\",\n    \"permalink\": \"\",\n    \"permalink_url\": \"\",\n    \"reposts_count\": {{faker 'random.number'}},\n    \"uri\": \"\",\n    \"username\": \"\"\n  },\n  \"user_id\": {{faker 'random.number'}}\n}",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "f9b741f7-981d-4052-af7d-ebf572e82ba2",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 422,
+          "label": "Unprocessable Entity",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "d2cf8987-affc-47a1-b540-0e9891fe2320",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 429,
+          "label": "Too Many Requests",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "d1397162-b24f-4812-889c-58cb5a9c58f8",
+      "documentation": "Returns a list of users who have favorited or liked the track.",
+      "method": "get",
+      "endpoint": "tracks/:track_id/favoriters",
+      "responses": [
+        {
+          "uuid": "fd2aa885-ec24-446e-9472-573b3ae93791",
+          "body": "[\n  {\n    \"avatar_url\": \"\",\n    \"city\": \"\",\n    \"country\": \"\",\n    \"description\": \"\",\n    \"discogs_name\": \"\",\n    \"first_name\": \"\",\n    \"followers_count\": {{faker 'random.number'}},\n    \"followings_count\": {{faker 'random.number'}},\n    \"full_name\": \"\",\n    \"id\": {{faker 'random.number'}},\n    \"kind\": \"\",\n    \"last_modified\": \"{{faker 'date.recent' 365}}\",\n    \"last_name\": \"\",\n    \"myspace_name\": \"\",\n    \"permalink\": \"\",\n    \"permalink_url\": \"\",\n    \"plan\": \"\",\n    \"playlist_count\": {{faker 'random.number'}},\n    \"public_favorites_count\": {{faker 'random.number'}},\n    \"reposts_count\": {{faker 'random.number'}},\n    \"subscriptions\": \"\",\n    \"track_count\": {{faker 'random.number'}},\n    \"uri\": \"\",\n    \"username\": \"\",\n    \"website\": \"\",\n    \"website_title\": \"\"\n  }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "68e4e352-f2d5-44b2-b3c6-956147688026",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "b634a024-2f0b-4363-bab8-84e19d41518f",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Not Found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "b44f004e-01a0-42d9-9521-d8f971b22514",
+      "documentation": "Returns all related tracks of track on SoundCloud.",
+      "method": "get",
+      "endpoint": "tracks/:track_id/related",
+      "responses": [
+        {
+          "uuid": "b35fb3d7-c317-4333-9402-2bb91be9f8a6",
+          "body": "{\n  \"collection\": [\n    {\n      \"access\": \"{{oneOf (array 'playable' 'preview' 'blocked' '')}}\",\n      \"artwork_url\": \"\",\n      \"available_country_codes\": \"\",\n      \"bpm\": {{faker 'random.number'}},\n      \"comment_count\": {{faker 'random.number'}},\n      \"commentable\": {{faker 'random.boolean'}},\n      \"created_at\": \"\",\n      \"description\": \"\",\n      \"download_count\": {{faker 'random.number'}},\n      \"download_url\": \"\",\n      \"downloadable\": \"\",\n      \"duration\": {{faker 'random.number'}},\n      \"embeddable_by\": \"\",\n      \"favoritings_count\": {{faker 'random.number'}},\n      \"genre\": \"\",\n      \"id\": {{faker 'random.number'}},\n      \"isrc\": \"\",\n      \"key_signature\": \"\",\n      \"kind\": \"\",\n      \"label_name\": \"\",\n      \"license\": \"\",\n      \"permalink_url\": \"\",\n      \"playback_count\": {{faker 'random.number'}},\n      \"purchase_title\": \"\",\n      \"purchase_url\": \"\",\n      \"release\": \"\",\n      \"release_day\": {{faker 'random.number'}},\n      \"release_month\": {{faker 'random.number'}},\n      \"release_year\": {{faker 'random.number'}},\n      \"reposts_count\": {{faker 'random.number'}},\n      \"secret_uri\": \"\",\n      \"sharing\": \"\",\n      \"stream_url\": \"\",\n      \"streamable\": {{faker 'random.boolean'}},\n      \"tag_list\": \"\",\n      \"title\": \"\",\n      \"uri\": \"\",\n      \"user\": {\n        \"avatar_url\": \"\",\n        \"created_at\": \"{{faker 'date.recent' 365}}\",\n        \"id\": {{faker 'random.number'}},\n        \"kind\": \"\",\n        \"last_modified\": \"{{faker 'date.recent' 365}}\",\n        \"permalink\": \"\",\n        \"permalink_url\": \"\",\n        \"uri\": \"\",\n        \"username\": \"\"\n      },\n      \"user_favorite\": {{faker 'random.boolean'}},\n      \"user_playback_count\": {{faker 'random.number'}},\n      \"waveform_url\": \"\"\n    }\n  ],\n  \"next_href\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "99494de1-790e-401b-b567-ce6832ec19ac",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "f5aa9ac4-6d5c-44e4-a87a-b6a66d2f7325",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Not Found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "c53fe825-d0d9-46b7-af0b-809c60c7b9c0",
+      "documentation": "Returns a collection of track's reposters.",
+      "method": "get",
+      "endpoint": "tracks/:track_id/reposters",
+      "responses": [
+        {
+          "uuid": "d7a81ec0-c494-4098-9992-b3b97770f2ab",
+          "body": "{\n  \"collection\": [\n    {\n      \"avatar_url\": \"\",\n      \"created_at\": \"{{faker 'date.recent' 365}}\",\n      \"id\": {{faker 'random.number'}},\n      \"kind\": \"\",\n      \"last_modified\": \"{{faker 'date.recent' 365}}\",\n      \"permalink\": \"\",\n      \"permalink_url\": \"\",\n      \"uri\": \"\",\n      \"username\": \"\"\n    }\n  ],\n  \"next_href\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "e7b6cf44-c878-4320-9cfe-2e9e25a432df",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "27b7ed63-5729-454e-853e-a72c89ac4f5c",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Not Found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "5747ce9d-6953-4ec6-805d-ab34d8ddf358",
+      "documentation": "Returns a track's streamable URLs",
+      "method": "get",
+      "endpoint": "tracks/:track_id/streams",
+      "responses": [
+        {
+          "uuid": "ac1a3c0f-0d9e-4324-9003-45b11db68127",
+          "body": "{\n  \"hls_mp3_128_url\": \"\",\n  \"hls_opus_64_url\": \"\",\n  \"http_mp3_128_url\": \"\",\n  \"preview_mp3_128_url\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "ab59d0ed-e67b-47f4-8234-27ed5e49df90",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "b105a799-3384-43c1-8b5e-5ae958180d17",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Not Found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "4ca975e6-b7a1-413a-85de-e597c4ecc337",
+      "documentation": "Performs a user search based on a query",
+      "method": "get",
+      "endpoint": "users",
+      "responses": [
+        {
+          "uuid": "c6f4a971-ecf3-4957-bc47-034876487a35",
+          "body": "{\n  \"collection\": [\n    {\n      \"avatar_url\": \"\",\n      \"city\": \"\",\n      \"country\": \"\",\n      \"created_at\": \"{{faker 'date.recent' 365}}\",\n      \"description\": \"\",\n      \"discogs_name\": \"\",\n      \"first_name\": \"\",\n      \"followers_count\": {{faker 'random.number'}},\n      \"followings_count\": {{faker 'random.number'}},\n      \"full_name\": \"\",\n      \"id\": {{faker 'random.number'}},\n      \"kind\": \"\",\n      \"last_modified\": \"{{faker 'date.recent' 365}}\",\n      \"last_name\": \"\",\n      \"myspace_name\": \"\",\n      \"permalink\": \"\",\n      \"permalink_url\": \"\",\n      \"plan\": \"\",\n      \"playlist_count\": {{faker 'random.number'}},\n      \"public_favorites_count\": {{faker 'random.number'}},\n      \"reposts_count\": {{faker 'random.number'}},\n      \"subscriptions\": \"\",\n      \"track_count\": {{faker 'random.number'}},\n      \"uri\": \"\",\n      \"username\": \"\",\n      \"website\": \"\",\n      \"website_title\": \"\"\n    }\n  ],\n  \"next_href\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "cfb745ff-c7a7-44a8-aea8-d86017a3c92e",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 400,
+          "label": "Bad Request",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "bb4f0225-7d69-4761-9491-bdb0e303bfd1",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "29d47bd4-1fb3-4662-aa8d-766793fadc9e",
+      "documentation": "Returns a user.",
+      "method": "get",
+      "endpoint": "users/:user_id",
+      "responses": [
+        {
+          "uuid": "8415e7c9-8acb-4f7c-8552-e6e6a721285c",
+          "body": "{\n  \"avatar_url\": \"\",\n  \"city\": \"\",\n  \"country\": \"\",\n  \"description\": \"\",\n  \"discogs_name\": \"\",\n  \"first_name\": \"\",\n  \"followers_count\": {{faker 'random.number'}},\n  \"followings_count\": {{faker 'random.number'}},\n  \"full_name\": \"\",\n  \"id\": {{faker 'random.number'}},\n  \"kind\": \"\",\n  \"last_modified\": \"\",\n  \"last_name\": \"\",\n  \"locale\": \"\",\n  \"myspace_name\": \"\",\n  \"permalink\": \"\",\n  \"permalink_url\": \"\",\n  \"plan\": \"\",\n  \"playlist_count\": {{faker 'random.number'}},\n  \"primary_email_confirmed\": {{faker 'random.boolean'}},\n  \"private_playlists_count\": {{faker 'random.number'}},\n  \"private_tracks_count\": {{faker 'random.number'}},\n  \"public_favorites_count\": {{faker 'random.number'}},\n  \"quota\": {\n    \"unlimited_upload_quota\": {{faker 'random.boolean'}},\n    \"upload_seconds_used\": {{faker 'random.number'}}\n  },\n  \"reposts_count\": {{faker 'random.number'}},\n  \"subscriptions\": \"\",\n  \"track_count\": {{faker 'random.number'}},\n  \"uri\": \"\",\n  \"username\": \"\",\n  \"website\": \"\",\n  \"website_title\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "746f4b7b-a317-4680-b2b6-bb0709624dd6",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "926de213-9a58-4d8a-bd8a-1830b5030431",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Not Found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "0c082d7f-71f6-411e-8cd8-fd979d0df4b8",
+      "documentation": "Returns a list of user's comments.",
+      "method": "get",
+      "endpoint": "users/:user_id/comments",
+      "responses": [
+        {
+          "uuid": "cccf372b-2de8-4be8-b520-ec4c54d27948",
+          "body": "[\n  {\n    \"body\": \"\",\n    \"created_at\": \"\",\n    \"id\": {{faker 'random.number'}},\n    \"kind\": \"\",\n    \"timestamp\": \"\",\n    \"track_id\": {{faker 'random.number'}},\n    \"uri\": \"\",\n    \"user\": {\n      \"avatar_url\": \"\",\n      \"followers_count\": {{faker 'random.number'}},\n      \"followings_count\": {{faker 'random.number'}},\n      \"id\": {{faker 'random.number'}},\n      \"kind\": \"\",\n      \"last_modified\": \"\",\n      \"permalink\": \"\",\n      \"permalink_url\": \"\",\n      \"reposts_count\": {{faker 'random.number'}},\n      \"uri\": \"\",\n      \"username\": \"\"\n    },\n    \"user_id\": {{faker 'random.number'}}\n  }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "174cfc39-ada1-453b-84a5-4a3762bdfe0b",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "5d87b93a-0eb3-4c62-a312-9210fe40555c",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Not Found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "0c15a471-e96c-4ced-b0db-5484dda37dcb",
+      "documentation": "Returns a list of user's favorited or liked tracks. (use /users/:userId/likes/tracks instead, to fetch a user's likes)",
+      "method": "get",
+      "endpoint": "users/:user_id/favorites",
+      "responses": [
+        {
+          "uuid": "dccbb315-09e7-4d3c-81b7-68e3e393f246",
+          "body": "{\n  \"collection\": [\n    {\n      \"access\": \"{{oneOf (array 'playable' 'preview' 'blocked' '')}}\",\n      \"artwork_url\": \"\",\n      \"available_country_codes\": \"\",\n      \"bpm\": {{faker 'random.number'}},\n      \"comment_count\": {{faker 'random.number'}},\n      \"commentable\": {{faker 'random.boolean'}},\n      \"created_at\": \"\",\n      \"description\": \"\",\n      \"download_count\": {{faker 'random.number'}},\n      \"download_url\": \"\",\n      \"downloadable\": \"\",\n      \"duration\": {{faker 'random.number'}},\n      \"embeddable_by\": \"\",\n      \"favoritings_count\": {{faker 'random.number'}},\n      \"genre\": \"\",\n      \"id\": {{faker 'random.number'}},\n      \"isrc\": \"\",\n      \"key_signature\": \"\",\n      \"kind\": \"\",\n      \"label_name\": \"\",\n      \"license\": \"\",\n      \"permalink_url\": \"\",\n      \"playback_count\": {{faker 'random.number'}},\n      \"purchase_title\": \"\",\n      \"purchase_url\": \"\",\n      \"release\": \"\",\n      \"release_day\": {{faker 'random.number'}},\n      \"release_month\": {{faker 'random.number'}},\n      \"release_year\": {{faker 'random.number'}},\n      \"reposts_count\": {{faker 'random.number'}},\n      \"secret_uri\": \"\",\n      \"sharing\": \"\",\n      \"stream_url\": \"\",\n      \"streamable\": {{faker 'random.boolean'}},\n      \"tag_list\": \"\",\n      \"title\": \"\",\n      \"uri\": \"\",\n      \"user\": {\n        \"avatar_url\": \"\",\n        \"created_at\": \"{{faker 'date.recent' 365}}\",\n        \"id\": {{faker 'random.number'}},\n        \"kind\": \"\",\n        \"last_modified\": \"{{faker 'date.recent' 365}}\",\n        \"permalink\": \"\",\n        \"permalink_url\": \"\",\n        \"uri\": \"\",\n        \"username\": \"\"\n      },\n      \"user_favorite\": {{faker 'random.boolean'}},\n      \"user_playback_count\": {{faker 'random.number'}},\n      \"waveform_url\": \"\"\n    }\n  ],\n  \"next_href\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "ddb9f58d-32a0-4c06-9ca7-6914deca7de3",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "92f3e9d8-db42-4ab5-94c2-bce2a9e87f18",
+      "documentation": "Returns a list of user’s followers.",
+      "method": "get",
+      "endpoint": "users/:user_id/followers",
+      "responses": [
+        {
+          "uuid": "1c913099-d645-4b66-b718-c400279039c8",
+          "body": "{\n  \"collection\": [\n    {\n      \"avatar_url\": \"\",\n      \"city\": \"\",\n      \"country\": \"\",\n      \"created_at\": \"{{faker 'date.recent' 365}}\",\n      \"description\": \"\",\n      \"discogs_name\": \"\",\n      \"first_name\": \"\",\n      \"followers_count\": {{faker 'random.number'}},\n      \"followings_count\": {{faker 'random.number'}},\n      \"full_name\": \"\",\n      \"id\": {{faker 'random.number'}},\n      \"kind\": \"\",\n      \"last_modified\": \"{{faker 'date.recent' 365}}\",\n      \"last_name\": \"\",\n      \"myspace_name\": \"\",\n      \"permalink\": \"\",\n      \"permalink_url\": \"\",\n      \"plan\": \"\",\n      \"playlist_count\": {{faker 'random.number'}},\n      \"public_favorites_count\": {{faker 'random.number'}},\n      \"reposts_count\": {{faker 'random.number'}},\n      \"subscriptions\": \"\",\n      \"track_count\": {{faker 'random.number'}},\n      \"uri\": \"\",\n      \"username\": \"\",\n      \"website\": \"\",\n      \"website_title\": \"\"\n    }\n  ],\n  \"next_href\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "3c5494b8-7cb6-4074-a185-2c577b1308e1",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "4f61a28d-ecf1-4787-84af-a59bdfa8ad31",
+      "documentation": "Returns a list of user’s followings.",
+      "method": "get",
+      "endpoint": "users/:user_id/followings",
+      "responses": [
+        {
+          "uuid": "e6746c6f-cca6-4c67-aea1-4f44330c76eb",
+          "body": "{\n  \"collection\": [\n    {\n      \"avatar_url\": \"\",\n      \"city\": \"\",\n      \"country\": \"\",\n      \"created_at\": \"{{faker 'date.recent' 365}}\",\n      \"description\": \"\",\n      \"discogs_name\": \"\",\n      \"first_name\": \"\",\n      \"followers_count\": {{faker 'random.number'}},\n      \"followings_count\": {{faker 'random.number'}},\n      \"full_name\": \"\",\n      \"id\": {{faker 'random.number'}},\n      \"kind\": \"\",\n      \"last_modified\": \"{{faker 'date.recent' 365}}\",\n      \"last_name\": \"\",\n      \"myspace_name\": \"\",\n      \"permalink\": \"\",\n      \"permalink_url\": \"\",\n      \"plan\": \"\",\n      \"playlist_count\": {{faker 'random.number'}},\n      \"public_favorites_count\": {{faker 'random.number'}},\n      \"reposts_count\": {{faker 'random.number'}},\n      \"subscriptions\": \"\",\n      \"track_count\": {{faker 'random.number'}},\n      \"uri\": \"\",\n      \"username\": \"\",\n      \"website\": \"\",\n      \"website_title\": \"\"\n    }\n  ],\n  \"next_href\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "495e7dcd-9783-4f33-b358-ad7c1d501731",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "d0bfce64-e8dd-4951-a117-83ee3b4a61bb",
+      "documentation": "Returns a user's following. (use /users/{user_id} instead, to fetch the user details)",
+      "method": "get",
+      "endpoint": "users/:user_id/followings/:following_id",
+      "responses": [
+        {
+          "uuid": "cd451734-a643-4e48-aab0-d0c9bf90a37d",
+          "body": "{\n  \"avatar_url\": \"\",\n  \"city\": \"\",\n  \"country\": \"\",\n  \"description\": \"\",\n  \"discogs_name\": \"\",\n  \"first_name\": \"\",\n  \"followers_count\": {{faker 'random.number'}},\n  \"followings_count\": {{faker 'random.number'}},\n  \"full_name\": \"\",\n  \"id\": {{faker 'random.number'}},\n  \"kind\": \"\",\n  \"last_modified\": \"\",\n  \"last_name\": \"\",\n  \"locale\": \"\",\n  \"myspace_name\": \"\",\n  \"permalink\": \"\",\n  \"permalink_url\": \"\",\n  \"plan\": \"\",\n  \"playlist_count\": {{faker 'random.number'}},\n  \"primary_email_confirmed\": {{faker 'random.boolean'}},\n  \"private_playlists_count\": {{faker 'random.number'}},\n  \"private_tracks_count\": {{faker 'random.number'}},\n  \"public_favorites_count\": {{faker 'random.number'}},\n  \"quota\": {\n    \"unlimited_upload_quota\": {{faker 'random.boolean'}},\n    \"upload_seconds_used\": {{faker 'random.number'}}\n  },\n  \"reposts_count\": {{faker 'random.number'}},\n  \"subscriptions\": \"\",\n  \"track_count\": {{faker 'random.number'}},\n  \"uri\": \"\",\n  \"username\": \"\",\n  \"website\": \"\",\n  \"website_title\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "899fc71b-8502-49b6-8e46-f1c3eaa57e7a",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "04b7e9a5-bd05-416e-afc8-77095ab1dd89",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Not Found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "f356ae7b-475c-4940-b0ff-4304a5441392",
+      "documentation": "Returns a list of user's liked tracks.",
+      "method": "get",
+      "endpoint": "users/:user_id/likes/tracks",
+      "responses": [
+        {
+          "uuid": "153ad424-9bc3-4ea0-bcc4-d4ec6b08ba75",
+          "body": "{\n  \"collection\": [\n    {\n      \"access\": \"{{oneOf (array 'playable' 'preview' 'blocked' '')}}\",\n      \"artwork_url\": \"\",\n      \"available_country_codes\": \"\",\n      \"bpm\": {{faker 'random.number'}},\n      \"comment_count\": {{faker 'random.number'}},\n      \"commentable\": {{faker 'random.boolean'}},\n      \"created_at\": \"\",\n      \"description\": \"\",\n      \"download_count\": {{faker 'random.number'}},\n      \"download_url\": \"\",\n      \"downloadable\": \"\",\n      \"duration\": {{faker 'random.number'}},\n      \"embeddable_by\": \"\",\n      \"favoritings_count\": {{faker 'random.number'}},\n      \"genre\": \"\",\n      \"id\": {{faker 'random.number'}},\n      \"isrc\": \"\",\n      \"key_signature\": \"\",\n      \"kind\": \"\",\n      \"label_name\": \"\",\n      \"license\": \"\",\n      \"permalink_url\": \"\",\n      \"playback_count\": {{faker 'random.number'}},\n      \"purchase_title\": \"\",\n      \"purchase_url\": \"\",\n      \"release\": \"\",\n      \"release_day\": {{faker 'random.number'}},\n      \"release_month\": {{faker 'random.number'}},\n      \"release_year\": {{faker 'random.number'}},\n      \"reposts_count\": {{faker 'random.number'}},\n      \"secret_uri\": \"\",\n      \"sharing\": \"\",\n      \"stream_url\": \"\",\n      \"streamable\": {{faker 'random.boolean'}},\n      \"tag_list\": \"\",\n      \"title\": \"\",\n      \"uri\": \"\",\n      \"user\": {\n        \"avatar_url\": \"\",\n        \"created_at\": \"{{faker 'date.recent' 365}}\",\n        \"id\": {{faker 'random.number'}},\n        \"kind\": \"\",\n        \"last_modified\": \"{{faker 'date.recent' 365}}\",\n        \"permalink\": \"\",\n        \"permalink_url\": \"\",\n        \"uri\": \"\",\n        \"username\": \"\"\n      },\n      \"user_favorite\": {{faker 'random.boolean'}},\n      \"user_playback_count\": {{faker 'random.number'}},\n      \"waveform_url\": \"\"\n    }\n  ],\n  \"next_href\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "5820214c-d7d8-4a17-908e-d85826886f42",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 400,
+          "label": "Bad Request",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "d36596e7-4918-4900-b9d3-b413ba822228",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "488589e5-0047-416a-b2d3-0873d764eee9",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Not Found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "be5f31ef-1a8c-46fc-adef-a17adce0c502",
+      "documentation": "Returns a list of user's playlists.",
+      "method": "get",
+      "endpoint": "users/:user_id/playlists",
+      "responses": [
+        {
+          "uuid": "9d569330-bdc3-4488-b3c9-b0fa5a79583b",
+          "body": "{\n  \"collection\": [\n    {\n      \"artwork_url\": \"\",\n      \"created_at\": \"\",\n      \"description\": \"\",\n      \"downloadable\": {{faker 'random.boolean'}},\n      \"duration\": {{faker 'random.number'}},\n      \"ean\": \"\",\n      \"embeddable_by\": \"\",\n      \"genre\": \"\",\n      \"id\": {{faker 'random.number'}},\n      \"kind\": \"\",\n      \"label\": {\n        \"avatar_url\": \"\",\n        \"created_at\": \"{{faker 'date.recent' 365}}\",\n        \"id\": {{faker 'random.number'}},\n        \"kind\": \"\",\n        \"last_modified\": \"{{faker 'date.recent' 365}}\",\n        \"permalink\": \"\",\n        \"permalink_url\": \"\",\n        \"uri\": \"\",\n        \"username\": \"\"\n      },\n      \"label_id\": {{faker 'random.number'}},\n      \"label_name\": \"\",\n      \"last_modified\": \"\",\n      \"license\": \"\",\n      \"likes_count\": {{faker 'random.number'}},\n      \"permalink\": \"\",\n      \"permalink_url\": \"\",\n      \"playlist_type\": \"\",\n      \"purchase_title\": \"\",\n      \"purchase_url\": \"\",\n      \"release\": \"\",\n      \"release_day\": {{faker 'random.number'}},\n      \"release_month\": {{faker 'random.number'}},\n      \"release_year\": {{faker 'random.number'}},\n      \"sharing\": \"\",\n      \"streamable\": {{faker 'random.boolean'}},\n      \"tag_list\": \"\",\n      \"tags\": \"\",\n      \"title\": \"\",\n      \"track_count\": {{faker 'random.number'}},\n      \"tracks\": [\n        {\n          \"access\": \"{{oneOf (array 'playable' 'preview' 'blocked' '')}}\",\n          \"artwork_url\": \"\",\n          \"available_country_codes\": \"\",\n          \"bpm\": {{faker 'random.number'}},\n          \"comment_count\": {{faker 'random.number'}},\n          \"commentable\": {{faker 'random.boolean'}},\n          \"created_at\": \"\",\n          \"description\": \"\",\n          \"download_count\": {{faker 'random.number'}},\n          \"download_url\": \"\",\n          \"downloadable\": \"\",\n          \"duration\": {{faker 'random.number'}},\n          \"embeddable_by\": \"\",\n          \"favoritings_count\": {{faker 'random.number'}},\n          \"genre\": \"\",\n          \"id\": {{faker 'random.number'}},\n          \"isrc\": \"\",\n          \"key_signature\": \"\",\n          \"kind\": \"\",\n          \"label_name\": \"\",\n          \"license\": \"\",\n          \"permalink_url\": \"\",\n          \"playback_count\": {{faker 'random.number'}},\n          \"purchase_title\": \"\",\n          \"purchase_url\": \"\",\n          \"release\": \"\",\n          \"release_day\": {{faker 'random.number'}},\n          \"release_month\": {{faker 'random.number'}},\n          \"release_year\": {{faker 'random.number'}},\n          \"reposts_count\": {{faker 'random.number'}},\n          \"secret_uri\": \"\",\n          \"sharing\": \"\",\n          \"stream_url\": \"\",\n          \"streamable\": {{faker 'random.boolean'}},\n          \"tag_list\": \"\",\n          \"title\": \"\",\n          \"uri\": \"\",\n          \"user\": {\n            \"avatar_url\": \"\",\n            \"created_at\": \"{{faker 'date.recent' 365}}\",\n            \"id\": {{faker 'random.number'}},\n            \"kind\": \"\",\n            \"last_modified\": \"{{faker 'date.recent' 365}}\",\n            \"permalink\": \"\",\n            \"permalink_url\": \"\",\n            \"uri\": \"\",\n            \"username\": \"\"\n          },\n          \"user_favorite\": {{faker 'random.boolean'}},\n          \"user_playback_count\": {{faker 'random.number'}},\n          \"waveform_url\": \"\"\n        }\n      ],\n      \"tracks_uri\": \"\",\n      \"type\": \"\",\n      \"uri\": \"\",\n      \"user\": {\n        \"avatar_url\": \"\",\n        \"created_at\": \"{{faker 'date.recent' 365}}\",\n        \"id\": {{faker 'random.number'}},\n        \"kind\": \"\",\n        \"last_modified\": \"{{faker 'date.recent' 365}}\",\n        \"permalink\": \"\",\n        \"permalink_url\": \"\",\n        \"uri\": \"\",\n        \"username\": \"\"\n      },\n      \"user_id\": {{faker 'random.number'}}\n    }\n  ],\n  \"next_href\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "02df585c-1a44-4d5d-886e-08c185a5a063",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "4440042e-340b-4c0f-8eae-5f38349be185",
+      "documentation": "Returns a list of user's tracks.",
+      "method": "get",
+      "endpoint": "users/:user_id/tracks",
+      "responses": [
+        {
+          "uuid": "b8421faf-5e43-4476-8308-993a10f65547",
+          "body": "{\n  \"collection\": [\n    {\n      \"access\": \"{{oneOf (array 'playable' 'preview' 'blocked' '')}}\",\n      \"artwork_url\": \"\",\n      \"available_country_codes\": \"\",\n      \"bpm\": {{faker 'random.number'}},\n      \"comment_count\": {{faker 'random.number'}},\n      \"commentable\": {{faker 'random.boolean'}},\n      \"created_at\": \"\",\n      \"description\": \"\",\n      \"download_count\": {{faker 'random.number'}},\n      \"download_url\": \"\",\n      \"downloadable\": \"\",\n      \"duration\": {{faker 'random.number'}},\n      \"embeddable_by\": \"\",\n      \"favoritings_count\": {{faker 'random.number'}},\n      \"genre\": \"\",\n      \"id\": {{faker 'random.number'}},\n      \"isrc\": \"\",\n      \"key_signature\": \"\",\n      \"kind\": \"\",\n      \"label_name\": \"\",\n      \"license\": \"\",\n      \"permalink_url\": \"\",\n      \"playback_count\": {{faker 'random.number'}},\n      \"purchase_title\": \"\",\n      \"purchase_url\": \"\",\n      \"release\": \"\",\n      \"release_day\": {{faker 'random.number'}},\n      \"release_month\": {{faker 'random.number'}},\n      \"release_year\": {{faker 'random.number'}},\n      \"reposts_count\": {{faker 'random.number'}},\n      \"secret_uri\": \"\",\n      \"sharing\": \"\",\n      \"stream_url\": \"\",\n      \"streamable\": {{faker 'random.boolean'}},\n      \"tag_list\": \"\",\n      \"title\": \"\",\n      \"uri\": \"\",\n      \"user\": {\n        \"avatar_url\": \"\",\n        \"created_at\": \"{{faker 'date.recent' 365}}\",\n        \"id\": {{faker 'random.number'}},\n        \"kind\": \"\",\n        \"last_modified\": \"{{faker 'date.recent' 365}}\",\n        \"permalink\": \"\",\n        \"permalink_url\": \"\",\n        \"uri\": \"\",\n        \"username\": \"\"\n      },\n      \"user_favorite\": {{faker 'random.boolean'}},\n      \"user_playback_count\": {{faker 'random.number'}},\n      \"waveform_url\": \"\"\n    }\n  ],\n  \"next_href\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "ba418352-5f0e-4473-8582-7fa8fb4b9bc7",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "2a853a1a-c306-4afd-8d8c-6b62bfa5239a",
+      "documentation": "Returns list of user's links added to their profile (website, facebook, instagram).",
+      "method": "get",
+      "endpoint": "users/:user_id/web-profiles",
+      "responses": [
+        {
+          "uuid": "1bdac7ab-4297-48f8-a56f-bce216aaee08",
+          "body": "[\n  {\n    \"created_at\": \"\",\n    \"id\": {{faker 'random.number'}},\n    \"kind\": \"\",\n    \"service\": \"\",\n    \"title\": \"\",\n    \"url\": \"\",\n    \"username\": \"\"\n  }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "c6222046-bd29-4a93-9dc4-ff7cb7cab8f1",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Unauthorized",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "9fe88f5c-edc2-4160-bd71-784eb015af80",
+          "body": "{\n  \"code\": {{faker 'random.number'}},\n  \"error\": \"\",\n  \"errors\": [\n    \"\"\n  ],\n  \"link\": \"\",\n  \"message\": \"\",\n  \"status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Not Found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ]
+}

@@ -1,0 +1,1790 @@
+{
+  "uuid": "a79174d7-7e6a-4369-824d-f3fbe2c01f09",
+  "lastMigration": 19,
+  "name": "Wikimedia",
+  "endpointPrefix": "api/rest_v1",
+  "latency": 0,
+  "port": 3000,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "b05391a0-f336-4f0c-a787-d3fb669249ec",
+      "documentation": "Gets availability of featured feed content for the apps by wiki domain.",
+      "method": "get",
+      "endpoint": "feed/availability",
+      "responses": [
+        {
+          "uuid": "a9048ffd-80f7-4c31-a856-f521f770eb35",
+          "body": "{\n  \"in_the_news\": [\n    \"\"\n  ],\n  \"most_read\": [\n    \"\"\n  ],\n  \"on_this_day\": [\n    \"\"\n  ],\n  \"picture_of_the_day\": [\n    \"\"\n  ],\n  \"todays_featured_article\": [\n    \"\"\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "JSON containing lists of wiki domains for which feed content is available.",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8; profile=\"https://www.mediawiki.org/wiki/Specs/Availability/1.0.1\""
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "07ba181b-fb24-4bbd-a347-902af7796afd",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8; profile=\"https://www.mediawiki.org/wiki/Specs/Availability/1.0.1\""
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "1412ce1f-7e87-4f1e-be9b-15c62b3929dd",
+      "documentation": "Check and normalize a TeX formula.",
+      "method": "post",
+      "endpoint": "media/math/check/:type",
+      "responses": [
+        {
+          "uuid": "6994979e-6e0a-40f7-be1d-0f3b0a359f3f",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Information about the checked formula",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "f85e60ab-6c51-4415-afd1-457f49102434",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 400,
+          "label": "Invalid type",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "8ccf5e04-83f9-43b0-9c2d-25b7a451b1b5",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "f6c1e11f-e755-495f-8c07-d3b8f16b84aa",
+      "documentation": "Get a previously-stored formula",
+      "method": "get",
+      "endpoint": "media/math/formula/:hash",
+      "responses": [
+        {
+          "uuid": "9637da96-57d4-4bf4-8315-930e828260e9",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Information about the checked formula",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "997042d8-cc7c-41ca-8231-546dff1500b0",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Data for the given hash cannot be found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "c25f3a72-9376-422a-9cb7-e81d981b389c",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "c49ddcc7-169c-4a6f-a81f-b8e626ddee05",
+      "documentation": "Get rendered formula in the given format.",
+      "method": "get",
+      "endpoint": "media/math/render/:format/:hash",
+      "responses": [
+        {
+          "uuid": "bd395a2d-5e45-484f-b468-ef03fec81392",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "The rendered formula",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "image/svg+xml"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "c9821058-b648-46e0-9c5c-07c5de477314",
+          "body": "",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Unknown format or hash ID",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "image/svg+xml"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "8f07927b-4d34-46fb-a45f-fe7fd59b9dbd",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "image/svg+xml"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "be484b28-6153-4476-94b0-d24d107dca8a",
+      "documentation": "Get the sum of absolute value of text bytes difference between current edit and\nprevious one.\n",
+      "method": "get",
+      "endpoint": "metrics/bytes-difference/absolute/aggregate/:project/{editor-type}/{page-type}/:granularity/:start/:end",
+      "responses": [
+        {
+          "uuid": "bfb34393-c8e1-4c44-b202-e376741b1c9a",
+          "body": "{\n  \"items\": [\n    {\n      \"editor-type\": \"\",\n      \"granularity\": \"\",\n      \"page-type\": \"\",\n      \"project\": \"\",\n      \"results\": [\n        {\n          \"abs_bytes_diff\": {{faker 'random.number'}},\n          \"timestamp\": \"\"\n        }\n      ]\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "The list of values",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "8679bb34-1bf6-4145-a703-850b6f884345",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "a764c44b-9b4c-4c18-b7d0-ebb37ba92334",
+      "documentation": "Get the sum of absolute text bytes difference per page.",
+      "method": "get",
+      "endpoint": "metrics/bytes-difference/absolute/per-page/:project/{page-title}/{editor-type}/:granularity/:start/:end",
+      "responses": [
+        {
+          "uuid": "3d2e3424-132c-4c4b-919c-0fc770c89072",
+          "body": "{\n  \"items\": [\n    {\n      \"editor-type\": \"\",\n      \"granularity\": \"\",\n      \"page-title\": \"\",\n      \"project\": \"\",\n      \"results\": [\n        {\n          \"abs_bytes_diff\": {{faker 'random.number'}},\n          \"timestamp\": \"\"\n        }\n      ]\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "The list of values",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "9e6ad0b2-b462-44be-8dfd-a32ad67a0568",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "b96c1ec8-ebe3-4e23-aee7-fb444587d2e1",
+      "documentation": "Get the sum of net text bytes difference between current edit and previous one.",
+      "method": "get",
+      "endpoint": "metrics/bytes-difference/net/aggregate/:project/{editor-type}/{page-type}/:granularity/:start/:end",
+      "responses": [
+        {
+          "uuid": "bb30b704-c452-4f00-8a51-12ffb384cc4f",
+          "body": "{\n  \"items\": [\n    {\n      \"editor-type\": \"\",\n      \"granularity\": \"\",\n      \"page-type\": \"\",\n      \"project\": \"\",\n      \"results\": [\n        {\n          \"net_bytes_diff\": {{faker 'random.number'}},\n          \"timestamp\": \"\"\n        }\n      ]\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "The list of values",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "22089a9b-6adb-44db-a57c-82ebe29b64c2",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "315caf52-bf09-4b83-af18-cfd32d244594",
+      "documentation": "Get the sum of net text bytes difference per page.",
+      "method": "get",
+      "endpoint": "metrics/bytes-difference/net/per-page/:project/{page-title}/{editor-type}/:granularity/:start/:end",
+      "responses": [
+        {
+          "uuid": "c7b86df9-d7f4-4d55-9a72-09d0af1a825e",
+          "body": "{\n  \"items\": [\n    {\n      \"editor-type\": \"\",\n      \"granularity\": \"\",\n      \"page-title\": \"\",\n      \"project\": \"\",\n      \"results\": [\n        {\n          \"net_bytes_diff\": {{faker 'random.number'}},\n          \"timestamp\": \"\"\n        }\n      ]\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "The list of values",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "eba47bca-275e-4307-bec3-ebd0748ef81d",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "bd70208b-bb9e-481b-9a8d-a1786f88bda3",
+      "documentation": "Get edited-pages counts for a project.",
+      "method": "get",
+      "endpoint": "metrics/edited-pages/aggregate/:project/{editor-type}/{page-type}/{activity-level}/:granularity/:start/:end",
+      "responses": [
+        {
+          "uuid": "d39b806e-b5ed-4a6e-8a20-d737a0015c99",
+          "body": "{\n  \"items\": [\n    {\n      \"activity-level\": \"\",\n      \"editor-type\": \"\",\n      \"granularity\": \"\",\n      \"page-type\": \"\",\n      \"project\": \"\",\n      \"results\": [\n        {\n          \"edited_pages\": {{faker 'random.number'}},\n          \"timestamp\": \"\"\n        }\n      ]\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "The list of values",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "6e5140e0-f17e-4259-8be5-c2e924b14804",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "f70d0936-336a-446b-be3f-c008fbcaf6d1",
+      "documentation": "Get new pages counts for a project.",
+      "method": "get",
+      "endpoint": "metrics/edited-pages/new/:project/{editor-type}/{page-type}/:granularity/:start/:end",
+      "responses": [
+        {
+          "uuid": "efc2e084-ec86-4981-8bc8-a9a5c8ca4e7e",
+          "body": "{\n  \"items\": [\n    {\n      \"editor-type\": \"\",\n      \"granularity\": \"\",\n      \"page-type\": \"\",\n      \"project\": \"\",\n      \"results\": [\n        {\n          \"new_pages\": {{faker 'random.number'}},\n          \"timestamp\": \"\"\n        }\n      ]\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "The list of values",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "1689fda2-03f3-437d-b234-0b8e02f215c1",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "db6ed144-97ee-47cd-b7d9-29495e55b523",
+      "documentation": "Get top 100 edited-pages by absolute bytes-difference.",
+      "method": "get",
+      "endpoint": "metrics/edited-pages/top-by-absolute-bytes-difference/:project/{editor-type}/{page-type}/:year/:month/:day",
+      "responses": [
+        {
+          "uuid": "823bcbd0-75f0-483d-a366-7ef015dcc2b1",
+          "body": "{\n  \"items\": [\n    {\n      \"editor-type\": \"\",\n      \"granularity\": \"\",\n      \"page-type\": \"\",\n      \"project\": \"\",\n      \"results\": [\n        {\n          \"timestamp\": \"\",\n          \"top\": [\n            {\n              \"abs_bytes_diff\": {{faker 'random.number'}},\n              \"page_title\": \"\",\n              \"rank\": {{faker 'random.number'}}\n            }\n          ]\n        }\n      ]\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "The list of values",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "028017a5-e65c-4442-8c45-445820a640f7",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "a8af0106-59ea-40ed-8bb3-25e6c1bbc262",
+      "documentation": "Get top 100 edited-pages by edits count.",
+      "method": "get",
+      "endpoint": "metrics/edited-pages/top-by-edits/:project/{editor-type}/{page-type}/:year/:month/:day",
+      "responses": [
+        {
+          "uuid": "199e393a-fcc4-494d-8944-ee847593c17e",
+          "body": "{\n  \"items\": [\n    {\n      \"editor-type\": \"\",\n      \"granularity\": \"\",\n      \"page-type\": \"\",\n      \"project\": \"\",\n      \"results\": [\n        {\n          \"timestamp\": \"\",\n          \"top\": [\n            {\n              \"edits\": {{faker 'random.number'}},\n              \"page_title\": \"\",\n              \"rank\": {{faker 'random.number'}}\n            }\n          ]\n        }\n      ]\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "The list of values",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "71f98d5e-82d8-47e4-989c-f31a9aad87d6",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "5b5dad30-f76b-42de-87dd-421396af74dc",
+      "documentation": "Get top 100 edited-pages by net bytes-difference.",
+      "method": "get",
+      "endpoint": "metrics/edited-pages/top-by-net-bytes-difference/:project/{editor-type}/{page-type}/:year/:month/:day",
+      "responses": [
+        {
+          "uuid": "13af32b7-bdfa-41b4-980e-167cdc032d91",
+          "body": "{\n  \"items\": [\n    {\n      \"editor-type\": \"\",\n      \"granularity\": \"\",\n      \"page-type\": \"\",\n      \"project\": \"\",\n      \"results\": [\n        {\n          \"timestamp\": \"\",\n          \"top\": [\n            {\n              \"net_bytes_diff\": {{faker 'random.number'}},\n              \"page_title\": \"\",\n              \"rank\": {{faker 'random.number'}}\n            }\n          ]\n        }\n      ]\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "The list of values",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "a00c356a-dd18-4507-9350-5f4f8014276f",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "2d9c40f2-88be-4e4f-ac4b-e26445f2dfd9",
+      "documentation": "Get editors counts for a project.",
+      "method": "get",
+      "endpoint": "metrics/editors/aggregate/:project/{editor-type}/{page-type}/{activity-level}/:granularity/:start/:end",
+      "responses": [
+        {
+          "uuid": "959c41df-e58b-4223-a145-d368729bfa39",
+          "body": "{\n  \"items\": [\n    {\n      \"activity-level\": \"\",\n      \"editor-type\": \"\",\n      \"granularity\": \"\",\n      \"page-type\": \"\",\n      \"project\": \"\",\n      \"results\": [\n        {\n          \"editors\": {{faker 'random.number'}},\n          \"timestamp\": \"\"\n        }\n      ]\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "The list of values",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "4f307d5e-5d4c-4a30-b111-e438d32a141c",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "bdbd44fe-8d32-41aa-8795-bfbc75405caf",
+      "documentation": "Get top 100 editors by absolute bytes-difference.",
+      "method": "get",
+      "endpoint": "metrics/editors/top-by-absolute-bytes-difference/:project/{editor-type}/{page-type}/:year/:month/:day",
+      "responses": [
+        {
+          "uuid": "72750cf5-0ce9-48a4-88ff-957b0eaf720c",
+          "body": "{\n  \"items\": [\n    {\n      \"editor-type\": \"\",\n      \"granularity\": \"\",\n      \"page-type\": \"\",\n      \"project\": \"\",\n      \"results\": [\n        {\n          \"timestamp\": \"\",\n          \"top\": [\n            {\n              \"abs_bytes_diff\": {{faker 'random.number'}},\n              \"rank\": {{faker 'random.number'}},\n              \"user_text\": \"\"\n            }\n          ]\n        }\n      ]\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "The list of values",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "0de03c70-fe55-495c-9a50-706066b43eed",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "eaf68cb3-5d8b-4423-80b7-31a78d92ba47",
+      "documentation": "Get top 100 editors by edits count.",
+      "method": "get",
+      "endpoint": "metrics/editors/top-by-edits/:project/{editor-type}/{page-type}/:year/:month/:day",
+      "responses": [
+        {
+          "uuid": "c5425e10-23d4-46df-bc7d-6b532adb8202",
+          "body": "{\n  \"items\": [\n    {\n      \"editor-type\": \"\",\n      \"granularity\": \"\",\n      \"page-type\": \"\",\n      \"project\": \"\",\n      \"results\": [\n        {\n          \"timestamp\": \"\",\n          \"top\": [\n            {\n              \"edits\": {{faker 'random.number'}},\n              \"rank\": {{faker 'random.number'}},\n              \"user_text\": \"\"\n            }\n          ]\n        }\n      ]\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "The list of values",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "f27a8841-2923-4fa6-98f0-6727aa6302fb",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "68a9c547-f04d-4dbc-92a1-2beff4839541",
+      "documentation": "Get top 100 editors by net bytes-difference.",
+      "method": "get",
+      "endpoint": "metrics/editors/top-by-net-bytes-difference/:project/{editor-type}/{page-type}/:year/:month/:day",
+      "responses": [
+        {
+          "uuid": "cdc23a72-e5a5-4ce0-b273-69f0eaaf1252",
+          "body": "{\n  \"items\": [\n    {\n      \"editor-type\": \"\",\n      \"granularity\": \"\",\n      \"page-type\": \"\",\n      \"project\": \"\",\n      \"results\": [\n        {\n          \"timestamp\": \"\",\n          \"top\": [\n            {\n              \"net_bytes_diff\": {{faker 'random.number'}},\n              \"rank\": {{faker 'random.number'}},\n              \"user_text\": \"\"\n            }\n          ]\n        }\n      ]\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "The list of values",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "d3e190b7-16f5-4cd9-be97-813fcc097900",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "6bf3ce29-05dc-4838-9775-1f95588c6f49",
+      "documentation": "Get edits counts for a project.",
+      "method": "get",
+      "endpoint": "metrics/edits/aggregate/:project/{editor-type}/{page-type}/:granularity/:start/:end",
+      "responses": [
+        {
+          "uuid": "84f89b2a-979d-4da6-8b6a-071dfd98460b",
+          "body": "{\n  \"items\": [\n    {\n      \"editor-type\": \"\",\n      \"granularity\": \"\",\n      \"page-type\": \"\",\n      \"project\": \"\",\n      \"results\": [\n        {\n          \"edits\": {{faker 'random.number'}},\n          \"timestamp\": \"\"\n        }\n      ]\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "The list of values",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "6d3378a2-6c5c-4891-81cb-c8955d8e0efc",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "ee39d2de-0c87-40c7-8467-91e4fabeba71",
+      "documentation": "Get edit counts for a page in a project.",
+      "method": "get",
+      "endpoint": "metrics/edits/per-page/:project/{page-title}/{editor-type}/:granularity/:start/:end",
+      "responses": [
+        {
+          "uuid": "3223dd4e-b7a3-44f0-8bd6-009608563bff",
+          "body": "{\n  \"items\": [\n    {\n      \"editor-type\": \"\",\n      \"granularity\": \"\",\n      \"page-title\": \"\",\n      \"project\": \"\",\n      \"results\": [\n        {\n          \"edits\": {{faker 'random.number'}},\n          \"timestamp\": \"\"\n        }\n      ]\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "The list of values",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "91d1fec9-3af1-4a41-aa0b-31f4491c2aee",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "5633fb1b-b142-409a-9ff3-63c25710c15a",
+      "documentation": "Given a project and a date range, returns a timeseries of pagecounts.\nYou can filter by access site (mobile or desktop) and you can choose between monthly,\ndaily and hourly granularity as well.\n\n- Stability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)\n- Rate limit: 100 req/s\n- License: Data accessible via this endpoint is available under the\n  [CC0 1.0 license](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+      "method": "get",
+      "endpoint": "metrics/legacy/pagecounts/aggregate/:project/{access-site}/:granularity/:start/:end",
+      "responses": [
+        {
+          "uuid": "bb284243-e1ee-457d-82ef-5bd25dfb069f",
+          "body": "{\n  \"items\": [\n    {\n      \"access-site\": \"\",\n      \"count\": {{faker 'random.number'}},\n      \"granularity\": \"\",\n      \"project\": \"\",\n      \"timestamp\": \"\"\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "The list of values",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "a3cb2a1c-0e6e-40a1-89c4-7289185fd44b",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "83f7e8dc-0d76-4446-9ebf-e662a219d0b3",
+      "documentation": "Get pageview counts for a project.",
+      "method": "get",
+      "endpoint": "metrics/pageviews/aggregate/:project/:access/:agent/:granularity/:start/:end",
+      "responses": [
+        {
+          "uuid": "1b58f57c-71af-4c96-8eab-ef9e09aa9f80",
+          "body": "{\n  \"items\": [\n    {\n      \"access\": \"\",\n      \"agent\": \"\",\n      \"granularity\": \"\",\n      \"project\": \"\",\n      \"timestamp\": \"\",\n      \"views\": {{faker 'random.number'}}\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "The list of values",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "f580edd1-2f8c-464e-b244-868a3e26bb92",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "7922f955-b184-4e28-804d-4af7fc2049cf",
+      "documentation": "Get pageview counts for a page.",
+      "method": "get",
+      "endpoint": "metrics/pageviews/per-article/:project/:access/:agent/:article/:granularity/:start/:end",
+      "responses": [
+        {
+          "uuid": "4f0668ee-e610-4f56-817f-64928c5eafe8",
+          "body": "{\n  \"items\": [\n    {\n      \"access\": \"\",\n      \"agent\": \"\",\n      \"article\": \"\",\n      \"granularity\": \"\",\n      \"project\": \"\",\n      \"timestamp\": \"\",\n      \"views\": {{faker 'random.number'}}\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "The list of values",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "b5ac6bf1-8e92-4de5-970c-0c335671129d",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "b1464b1e-9f45-435c-a0bb-718a6e3d6c1a",
+      "documentation": "Get pageviews by country and access method.",
+      "method": "get",
+      "endpoint": "metrics/pageviews/top-by-country/:project/:access/:year/:month",
+      "responses": [
+        {
+          "uuid": "61d2358f-2b7d-4cd5-a5f5-790eca3ab317",
+          "body": "{\n  \"items\": [\n    {\n      \"access\": \"\",\n      \"countries\": [\n        {\n          \"country\": \"\",\n          \"rank\": {{faker 'random.number'}},\n          \"views\": {{faker 'random.number'}}\n        }\n      ],\n      \"month\": \"\",\n      \"project\": \"\",\n      \"year\": \"\"\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "The list of top countries by pageviews in the project",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "7aa44e50-22a1-477f-b884-db15c4bd8aa5",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "a5bbdd7b-ef1f-4544-8a87-4030a5291d35",
+      "documentation": "Get the most viewed articles for a project.",
+      "method": "get",
+      "endpoint": "metrics/pageviews/top/:project/:access/:year/:month/:day",
+      "responses": [
+        {
+          "uuid": "2c01ab45-6d0e-4bdf-800b-b1630d46fd25",
+          "body": "{\n  \"items\": [\n    {\n      \"access\": \"\",\n      \"articles\": [\n        {\n          \"article\": \"\",\n          \"rank\": {{faker 'random.number'}},\n          \"views\": {{faker 'random.number'}}\n        }\n      ],\n      \"day\": \"\",\n      \"month\": \"\",\n      \"project\": \"\",\n      \"year\": \"\"\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "The list of top articles in the project",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "f6c1ea95-bdd9-492a-b81b-dab3336de336",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "6ed1a537-f65d-4d68-9d32-111a92534e67",
+      "documentation": "Get newly registered users counts for a project.",
+      "method": "get",
+      "endpoint": "metrics/registered-users/new/:project/:granularity/:start/:end",
+      "responses": [
+        {
+          "uuid": "45460f9d-bb85-45c5-87af-3e18145287ab",
+          "body": "{\n  \"items\": [\n    {\n      \"granularity\": \"\",\n      \"project\": \"\",\n      \"results\": [\n        {\n          \"new_registered_users\": {{faker 'random.number'}},\n          \"timestamp\": \"\"\n        }\n      ]\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "The list of values",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "3ca0ed9e-01c5-4ec3-9abc-d854a14b5a7b",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "021702e1-c4ac-411e-a408-26275efdd0c0",
+      "documentation": "Get unique devices count per project",
+      "method": "get",
+      "endpoint": "metrics/unique-devices/:project/{access-site}/:granularity/:start/:end",
+      "responses": [
+        {
+          "uuid": "ed4f4edc-e1cc-4f1c-a636-95a869531e5e",
+          "body": "{\n  \"items\": [\n    {\n      \"access-site\": \"\",\n      \"devices\": {{faker 'random.number'}},\n      \"granularity\": \"\",\n      \"project\": \"\",\n      \"timestamp\": \"\"\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "The list of values",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "5490502f-caaf-4a9b-8bbd-ef48c909877d",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "f4df35b4-519a-4543-a2f0-b6c3794d28a1",
+      "documentation": "Machine-translate content",
+      "method": "post",
+      "endpoint": "transform/html/from/:from_lang/to/:to_lang",
+      "responses": [
+        {
+          "uuid": "7d988d36-412e-4869-bdd9-e396796cf5dc",
+          "body": "{\n  \"contents\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "The translated content",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "9f613fe3-0b8f-41b6-99c2-195dc9201d77",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "3000a509-6dc7-4f11-97ad-650399e737d7",
+      "documentation": "Machine-translate content",
+      "method": "post",
+      "endpoint": "transform/html/from/:from_lang/to/:to_lang/:provider",
+      "responses": [
+        {
+          "uuid": "58f1cee9-1427-4c04-9a3f-aad7f8cd7033",
+          "body": "{\n  \"contents\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "The translated content",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "23549a6f-352a-49f0-855c-091492c56b9a",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "bfc04488-18bc-44d5-896a-d2637ff8ab6c",
+      "documentation": "Lists the language pairs supported by the back-end",
+      "method": "get",
+      "endpoint": "transform/list/languagepairs/",
+      "responses": [
+        {
+          "uuid": "0c27ce50-cd2e-4a14-a022-74f35b17d2b4",
+          "body": "{\n  \"source\": [\n    \"\"\n  ],\n  \"target\": [\n    \"\"\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "the list of source and target languages supported by the API",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "ae70792d-8525-47a2-ada7-d675eb49a12c",
+      "documentation": "Lists the tools available for a language pair",
+      "method": "get",
+      "endpoint": "transform/list/pair/:from/:to/",
+      "responses": [
+        {
+          "uuid": "047bd457-7b3b-4e85-9f46-4ef869e92f6b",
+          "body": "{\n  \"tools\": [\n    \"\"\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "the list of tools available for the language pair",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "e3d82d8f-3b3c-4d50-98b2-f395be285df4",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "9334365a-f1c0-40ee-af59-4ea6381ac633",
+      "documentation": "Lists the tools and language pairs available for the given tool category",
+      "method": "get",
+      "endpoint": "transform/list/tool/:tool",
+      "responses": [
+        {
+          "uuid": "757d8548-b87d-4783-83f2-9a4848cb71f5",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "the list of language pairs available for a given translation tool",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "46b270dc-64f2-4bb7-aea0-c1857a86a148",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "35a009dc-7a14-4ad8-b286-f62cdddd1d78",
+      "documentation": "Lists the tools and language pairs available for the given tool category",
+      "method": "get",
+      "endpoint": "transform/list/tool/:tool/:from",
+      "responses": [
+        {
+          "uuid": "566756c6-0a2b-4436-bab9-3eaf6fc331a2",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "the list of language pairs available for a given translation tool",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "225136dd-bb44-4f96-b114-3b0bbc795e1d",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "8c79e3cf-5575-4c83-ba5b-bee02bd38e7e",
+      "documentation": "Lists the tools and language pairs available for the given tool category",
+      "method": "get",
+      "endpoint": "transform/list/tool/:tool/:from/:to",
+      "responses": [
+        {
+          "uuid": "56a89b73-34ec-46fb-8061-fe018c5f1d6c",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "the list of language pairs available for a given translation tool",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "cc9f55af-0c15-44e3-9504-1882e56d8092",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "9b74bc9f-3693-4dec-befa-6e65903ee6cb",
+      "documentation": "Fetch the dictionary meaning of a word",
+      "method": "get",
+      "endpoint": "transform/word/from/:from_lang/to/:to_lang/:word",
+      "responses": [
+        {
+          "uuid": "df52640c-39dd-403e-811e-f50d23afd5bb",
+          "body": "{\n  \"source\": \"\",\n  \"translations\": [\n    {\n      \"info\": \"\",\n      \"phrase\": \"\",\n      \"sources\": \"\"\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "the dictionary translation for the given word",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "dca1254c-a3cd-442b-82dc-2d64e904cb07",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "64c0c084-bf48-44a4-b0a9-3a5983356185",
+      "documentation": "Fetch the dictionary meaning of a word",
+      "method": "get",
+      "endpoint": "transform/word/from/:from_lang/to/:to_lang/:word/:provider",
+      "responses": [
+        {
+          "uuid": "c980fa67-e0b7-4821-8109-919a1bfa6f9b",
+          "body": "{\n  \"source\": \"\",\n  \"translations\": [\n    {\n      \"info\": \"\",\n      \"phrase\": \"\",\n      \"sources\": \"\"\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "the dictionary translation for the given word",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "92d42d34-e044-419b-b768-10c97b813e0f",
+          "body": "{\n  \"detail\": \"\",\n  \"method\": \"\",\n  \"status\": {{faker 'random.number'}},\n  \"title\": \"\",\n  \"type\": \"\",\n  \"uri\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ]
+}
